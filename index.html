@@ -3,15 +3,27 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Desafio - HTML+CSS</title>
+        <link rel="icon" href="./img/icon.png">
+        <title>Agenda de Contatos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"> 
         <script src="./js/main.js"></script>
     </head>
     <body>
-        <div id="main">
-            <h1>Agenda de Contatos</h1>
+        <div id="sideBar">
+            <button>Adicionar Contato</button>
+            <button>Visualizar Favoritos</button>
+            <button>Sobre</button>
+            <button>Logout</button>
+            <aside>
+                <button id="closeSide" onclick="closeSideBar()"></button>
+            </aside>
         </div>
+        <header>
+            <button onclick="openSideBar()">☰</button>
+            <div id="tpb">
+                <h1>Agenda de Contatos</h1>
+            </div>
+        </header>
     </body>
 </html>
