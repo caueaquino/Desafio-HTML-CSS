@@ -8,18 +8,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="../css/main-style.css">
         <script src="../js/js-style.js"></script>
+        <script src="../js/main.js"></script>
     </head>
     <body>
-        <ul class="container-side">
+        <ul id="container-side">
             <li id="lihome"><button id="ahome" onclick="bthome()"><img src="../img/icon-home.png" alt="Home" height="50px" width="50px"><p>HOME</p></button></li>
             <li id="licontatos"><button id="acontatos" onclick="btcontato()"><img src="../img/icon-contato.png" alt="Contatos" height="50px" width="50px"><p>CONTATOS</p></button></li>
             <li id="lifavoritos"><button id="afavoritos" onclick="btfavorito()"><img src="../img/icon-favorito.png" alt="Favoritos" height="50px" width="50px"><p>FAVORITOS</p></button></li>
-            <li id="lisair"><button id="asair" onclick="btlogout()"><img src="../img/icon-logout.png" alt="Sair" height="50px" width="50px"><p>LOGOUT</p></button></li>
+            <li id="lisair"><button id="asair" onclick="btlogout(), cbtlogout()"><img src="../img/icon-logout.png" alt="Sair" height="50px" width="50px"><p>LOGOUT</p></button></li>
         </ul>
-        <div class="container-main">
-            <iframe>
+        <div id="container-main">
+            <h1>Agenda Digital</h1>
+        </div>
+        
+        <div id="container-contatos">
 
-            </iframe>
+        </div>
+
+        <div id="container-favoritos">
+
+        </div>
+
+        <div id="container-logout">
+            <h2>Deseja realmente realizar Logout?</h2>
+            <button id="btsim" onclick="cbtsim()">Sim</button>
+            <button id="btnao" onclick="cbtnao()">Não</button>
         </div>
     </body>
 </html>
