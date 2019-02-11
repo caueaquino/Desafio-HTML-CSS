@@ -1,5 +1,0 @@
-// Javascript Document
-
-function openSideBar(){
-    
-}
