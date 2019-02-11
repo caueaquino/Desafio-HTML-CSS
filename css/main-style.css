@@ -44,26 +44,6 @@ body {
     border-radius: 0px 0px 20px 0px;    
 }
 
-.container-side #lihome:hover {
-    z-index: 3;
-}
-
-.container-side #licontatos:hover {
-    z-index: 3;
-}
-
-.container-side #lifavoritos:hover {
-    z-index: 3;
-}
-
-.container-side #lisair:hover {
-    z-index: 3;
-}
-
-.container-side li img {
-
-}
-
 .container-side li button {
     font-weight: 500;
     font-family: "Montserrat",sans-serif;
@@ -79,28 +59,7 @@ body {
     border: none;
 }
 
-.container-side li #ahome:hover {
-    border-radius: 0px 0px 0px 40px;
-    margin-left: 10%;
-}
-
-.container-side li #acontatos:hover {
-    border-radius: 40px 0px 0px 40px;
-    margin-left: 10%;
-}
-
-.container-side li #afavoritos:hover {
-    border-radius: 40px 0px 0px 40px;
-    margin-left: 10%;
-}
-
-.container-side li #asair:hover {
-    border-radius: 40px 0px 0px 0px;
-    margin-left: 10%;
-}
-
 .container-side li button:hover {
-    background-color: rgb(10, 10, 10);
     box-shadow: -2px 0px 10px rgb(10, 10, 10);
 }
 
