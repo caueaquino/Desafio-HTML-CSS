@@ -108,7 +108,4 @@ function resetbts(){
     document.getElementById("afavoritos").style.backgroundColor="rgba(10, 10, 10, 0)";
     document.getElementById("afavoritos").style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
     document.getElementById("lifavoritos").style.zIndex="2";
-    document.getElementById("asair").style.backgroundColor="rgba(10, 10, 10, 0)";
-    document.getElementById("asair").style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
-    document.getElementById("lisair").style.zIndex="2";
 }

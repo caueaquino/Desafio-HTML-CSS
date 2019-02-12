@@ -34,7 +34,7 @@ body {
 }
 
 #container-side li {
-    height: 25%;
+    height: 34%;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -243,7 +243,7 @@ body {
 label {
     font-family: "Montserrat",sans-serif;
     color: black;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .container-bts {
@@ -312,12 +312,12 @@ label {
 }
 
 #cc-internal h1{
-    font-size: 30pt;
+    font-size: 26pt;
 }
 
 #cc-internal label{
     padding: 3px;
-    font-size: 15pt;
+    font-size: 12pt;
     margin: 5px;
 }
 
@@ -401,7 +401,7 @@ label {
     background-color: rgb(214, 236, 255);
     border-radius: 20px;
     padding: 5px;
-    font-size: 16pt;
+    font-size: 13pt;
     margin-bottom: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.644);
 }
@@ -412,7 +412,7 @@ label {
     border: 2px solid black;
     border-radius: 10px;
     font-weight: 500;
-    font-size: 16pt;
+    font-size: 13pt;
     margin-top: 6px;
     padding: 5px;
     transition: all 1s;
@@ -423,62 +423,5 @@ label {
 }
 
 #container-perfil button:focus {
-    outline-style: none;
-}
-
-#container-logout {
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 10;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    display: none;
-    transition: all 1s;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#container-logout div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: aliceblue;
-    border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#container-logout h2 {
-    font-size: 24pt;
-    color: black;
-    font-family: "Montserrat",sans-serif;
-    text-align: center;
-    font-weight: 200;
-}
-
-#container-logout button {
-    padding-left: 60px;
-    padding-right: 60px;
-    height: 30px;
-    font-family: "Montserrat",sans-serif;
-    margin-top: 20px;
-    font-size: 22pt;
-    border: none;
-    border-radius: 20px;
-    background-color: rgba(72, 99, 253, 0.521);
-    color: white;
-    transition: all 1s;
-    text-align: center;
-    box-shadow: 0px 0px 8px black;
-}
-
-#container-logout button:hover {
-    background-color: rgb(108, 130, 255);
-    -webkit-transform: scale(1.1);
-}
-
-#container-logout button:focus {
     outline-style: none;
 }
