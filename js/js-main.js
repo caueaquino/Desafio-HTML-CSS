@@ -2,12 +2,16 @@
 
 var x=0;
 
+function cbtmenu(){
+    document.getElementById("")
+}
+
 function cbtlogout(){
     document.getElementById("container-logout").style.display="flex";
 }
 
 function cbtsim(){
-    window.location.href="./index.html";
+    window.location.href="../index.html";
 }
 
 function cbtnao(){
