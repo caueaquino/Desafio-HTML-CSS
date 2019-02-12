@@ -1,9 +1,42 @@
 // Javascript Document
 
-var x=0;
+let x=0;
+let y=0;
 
 function cbtmenu(){
-    document.getElementById("")
+    if(y==0){
+        document.getElementById("container-side").style.display="flex";
+        document.getElementById("btmenu").style.left="230px";
+        y=1;
+    }else{
+        document.getElementById("container-side").style.display="none";
+        document.getElementById("btmenu").style.left="10px";
+        y=0;
+    }
+}
+
+function cadastrarc(){
+    document.getElementById("container-cadastrar").style.display="flex";
+}
+
+function cbtconfirmar(){
+    document.getElementById("container-cadastrar").style.display="none";
+}
+
+function cbtcancelar(){
+    document.getElementById("container-cadastrar").style.display="none";
+}
+
+function visualizarContato(){
+    document.getElementById("container-vcont").style.display="flex";
+}
+
+function btconfirmarperfil(){
+    document.getElementById("container-vcont").style.display="none";
+}
+
+function btcancelarperfil(){
+    document.getElementById("container-vcont").style.display="none";
 }
 
 function cbtlogout(){

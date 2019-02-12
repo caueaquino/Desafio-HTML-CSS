@@ -1,91 +1,484 @@
-/* CSS Document*/
+/* CSS Document */
+
+@charset "UTF-8";
 
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 body {
-    width: 100%;
     min-height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../img/bg-index.jpg");
-    background-attachment: fixed;
+    flex-direction: row;
+    background-color: rgb(35, 68, 255);
+    background-image: url("../img/bg-main.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
 }
 
-#container-login {
-    display: flex;
+#container-side {
+    list-style-type: none;
+    height: 100vh;
+    min-height: 100vh;
+    width: 220px;
+    display: none;
     flex-direction: column;
+    background-color: rgb(9, 26, 255);
+    z-index: 12;
+    position: fixed;
+    box-shadow: 2px 0px 10px;
+    transition: all 1s;
+}
+
+#container-side li {
+    height: 25%;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: rgba(240, 248, 255, 0.062);
-    border-radius: 40px;
-    box-shadow: 0px 0px 10px black;
-    padding: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    min-height: 350px;
+    background-color: rgb(82, 107, 247);
+    z-index: 2;
 }
 
-#container-login h2 {
-    font-size: 28pt;
-    font-family: "Montserrat",sans-serif;
-    color: rgb(20, 20, 20);
+#container-side li button {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 1.5% 0% 1.5% 0%;
+    display: block;
     text-align: center;
-    margin-bottom: 30px;
+    transition: all 1s;
+    border: none;
 }
 
-#container-login label {
-    font-family: "Montserrat",sans-serif;
-    color: rgb(40, 40, 40);
-    font-size: 20pt;
-    width: 90%;
-    text-align: left;
+#container-side li button:hover {
+    background-color: rgb(124, 143, 252);
 }
 
-#container-login input {
-    font-family: "Montserrat",sans-serif;
-    font-size: 18pt;
-    border-radius: 10px;
-    padding: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.4);
-    margin-bottom: 20px;
-    width: 90%;
-    background-color: rgba(255, 255, 255, 0.801);
-}
-
-#container-login input:focus {
+#container-side li button:focus{
     outline-style: none;
 }
 
-#container-login button {
-    border: none;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
-    background-color: rgb(77, 148, 255);
-    color: white;
-    height: 30px;
-    width: 90%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    font-size: 18pt;
-    transition: all 1s;
-    box-shadow: 0px 0px 5px black;
-    min-height: 30px;
+#container-side li button p {
+    font-family: "Montserrat",sans-serif;
+    font-size: 9pt;
+    position: relative;
 }
 
-#container-login button:hover {
+#btmenu{
+    font-family: "Montserrat",sans-serif;
+    font-size: 28pt;
+    transition: all 1s;
+    background-color: rgb(200, 230, 255);
+    z-index: 11;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 50px;
+    height: 60px;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.534);
+    border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+#btmenu:hover{
+    -webkit-transform: scale(1.3);
+}
+
+#btmenu:focus{
+    outline-style: none;
+}
+
+#container-main, #container-contatos, #container-favoritos {
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: -2px 0px 10px rgb(10, 10, 10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-size: cover;
+}
+
+#container-main p{
+    color: white;
+    font-family: "Montserrat",sans-serif;
+    font-size: 18pt;
+    margin: 30px;
+    text-align: center;
+}
+
+#container-contatos, #container-favoritos {
+    display: none;
+}
+
+#container-main h1, #container-contatos h1, #container-favoritos h1 {
+    font-family: "Montserrat",sans-serif;
+    font-size: 36pt;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.topop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.topop button {
+    padding: 5px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0px 0x 5px rgba(0, 0, 0, 0.705);
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 1s;
+}
+
+.topop button:hover {
+    -webkit-transform: scale(1.3);
+}
+
+.topop button:focus {
+    outline-style: none;
+}
+
+#barraPesquisa01, #barraPesquisa02{
+    width: 90%;
+    border-radius: 10px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 20pt;
+    background-color: rgba(240, 248, 255, 0.562);
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0x 5px rgba(0, 0, 0, 0.705);
+    padding: 5px;
+    margin-bottom: 40px;
+    color: rgb(41, 41, 41);
+}
+
+#barraPesquisa01:hover, #barraPesquisa02:hover{
+    background-color: rgba(240, 248, 255, 0.719);
+}
+
+#barraPesquisa01:focus, #barraPesquisa02:focus{
+    outline-style: none;
+}
+
+#container-main h2{
+    font-size: 28pt;
+    color: white;
+    font-family: "Montserrat",sans-serif;
+}
+
+#container-contatos table, #container-favoritos table {
+    border-radius: 20px;
+    height: 100%;
+    position: relative;
+    max-height: 50vh;
+    width: 70%;
+}
+
+#container-contatos table tr, #container-favoritos table tr {
+    width: 100%;
+}
+
+#container-contatos table tr td, #container-favoritos table tr td {
+    background-color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    min-height: 150px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.603);
+    transition: all 1s;
+}
+
+#container-contatos table tr td:hover, #container-favoritos table tr td:hover {
+    -webkit-transform: scale(1.1);
+    box-shadow: 0px 0px 10px white;
+}
+
+#container-contatos table tr td .img-user, #container-favoritos table tr td .img-user{
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+}
+
+.container-td {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(217, 237, 255);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container-dados {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+label {
+    font-family: "Montserrat",sans-serif;
+    color: black;
+    font-size: 14pt;
+}
+
+.container-bts {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-bts button {
+    border-radius: 20px;
+    background-color: rgb(61, 87, 253);
+    transition: all 1s;
+    padding: 3px;
+    border: none;
+    font-size: 12pt;
+    color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.container-bts button:hover {
     -webkit-transform: scale(1.2);
 }
 
-#container-login button:focus {
+.container-bts button:focus {
     outline-style: none;
 }
 
-#container-cadastro {
+.container-bts .ifavorito {
+    width: 30px;
+    height: 30px;
+}
+
+#container-contatos table caption, #container-favoritos table caption {
+    font-size: 24pt;
     font-family: "Montserrat",sans-serif;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    border: none;
+    margin-bottom: 30px;
+}
+
+#container-cadastrar {
+    position: fixed;
+    z-index: 12;
+    background-color: rgba(0, 0, 0, 0.705);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cc-internal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat",sans-serif;background-color: aliceblue;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#cc-internal h1{
+    font-size: 30pt;
+}
+
+#cc-internal label{
+    padding: 3px;
+    font-size: 15pt;
+    margin: 5px;
+}
+
+#cc-internal input{
+    margin: 5px;
+    padding: 3px;
+    font-size: 15pt;
+    border: 1px solid rgba(0, 0, 0, 0.63);
+    border-radius: 10px;
+}
+
+.btinput {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(142, 195, 255, 0.445);
+    transition: all 1s;
+}
+
+.btinput:hover {
+    -webkit-transform: scale(1.3);
+}
+
+.btinput:focus {
+    outline-style: none;
+}
+
+#container-vcont {
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    min-height: 100vh;
+    z-index: 12;
+}
+
+#container-op {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#container-opts {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    flex-direction: row;
+    justify-content: center;
+}
+
+#container-opts button{
+    background-color: rgba(61, 87, 253, 0);
+    border: none;
+    border-radius: 20px;
+    margin: 6px;
+    transition: all 1s;
+}
+
+#container-opts button:hover {
+    -webkit-transform: scale(1.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.603);
+}
+
+#container-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Montserrat",sans-serif;
+}
+
+#container-perfil label {
+    background-color: rgb(214, 236, 255);
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 16pt;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.644);
+}
+
+#container-perfil button {
+    background-color: rgba(240, 248, 255, 0);
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16pt;
+    margin-top: 6px;
+    padding: 5px;
+    transition: all 1s;
+}
+
+#container-perfil button:hover {
+    -webkit-transform: scale(1.3);
+}
+
+#container-perfil button:focus {
+    outline-style: none;
+}
+
+#container-logout {
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: none;
+    transition: all 1s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-logout div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#container-logout h2 {
+    font-size: 24pt;
+    color: black;
+    font-family: "Montserrat",sans-serif;
+    text-align: center;
+    font-weight: 200;
+}
+
+#container-logout button {
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 30px;
+    font-family: "Montserrat",sans-serif;
+    margin-top: 20px;
+    font-size: 22pt;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(72, 99, 253, 0.521);
+    color: white;
+    transition: all 1s;
+    text-align: center;
+    box-shadow: 0px 0px 8px black;
+}
+
+#container-logout button:hover {
+    background-color: rgb(108, 130, 255);
+    -webkit-transform: scale(1.1);
+}
+
+#container-logout button:focus {
+    outline-style: none;
 }
