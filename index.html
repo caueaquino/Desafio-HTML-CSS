@@ -11,27 +11,20 @@
     </head>
     <body>
         <ul id="container-side">
-            <li id="lihome"><button id="ahome" onclick="bthome()"><img src="./img/icon-home.png" alt="Home" height="50px" width="50px"><p>HOME</p></button></li>
-            <li id="licontatos"><button id="acontatos" onclick="btcontato()"><img src="./img/icon-contato.png" alt="Contatos" height="50px" width="50px"><p>CONTATOS</p></button></li>
-            <li id="lifavoritos"><button id="afavoritos" onclick="btfavorito()"><img src="./img/icon-favoritos.png" alt="Favoritos" height="50px" width="50px"><p>FAVORITOS</p></button></li>
+            <li id="licontatos"><button id="acontatos" onclick="btContato()"><img src="./img/icon-contato.png" alt="Contatos" height="100px" width="100px"><p>CONTATOS</p></button></li>
+            <li id="lifavoritos"><button id="afavoritos" onclick="btFavorito()"><img src="./img/icon-favoritos.png" alt="Favoritos" height="100px" width="100px"><p>FAVORITOS</p></button></li>
         </ul>
 
-        <button id="btmenu" onclick="cbtmenu()">☰</button>
+        <button id="btmenu" onclick="btMenu()">☰</button>
 
-        <div id="container-main">
-            <h1>Agenda</h1>
-            <h2>Bem-vindo</h2>
-            <p>A Agenda Digital é um website que funciona como uma lista de contatos, para você armazenar e consultar dados de seus amigos/contatos de qualquer apenas sendo necessaria uma conexão com a internet.</p>
-        </div>
-        
         <div id="container-contatos">
             <h1>Agenda</h1>
             <div class="topop">
-                <input id="barraPesquisa01" type="text" placeholder="Pesquisar">
-                <button onclick="search()"><img src="./img/pesquisar-icon.png" alt="Pesquisar" height="50px" width="50px"></button>
+                <input id="barraPesquisa" type="text" placeholder="Pesquisar">
+                <button onclick="search()"><img src="./img/pesquisar-icon.png" alt="Pesquisar" height="26px" width="28px"></button>
             </div>
             
-            <button class="btcad" onclick="cadastrarc()"><img src="./img/add-contato.png" alt="Adicionar Contato" height="50px" width="50px"></button>
+            <button class="btcad" onclick="cadastrarContato()">Cadastrar Contato&nbsp;&nbsp;<img src="./img/add-contato.png" alt="Adicionar Contato" height="35px" width="35px"></button>
 
             <table id="table-contatos">
                 <caption>Contatos</caption>
@@ -51,335 +44,7 @@
                         </div>
                     </td>
                 </tr>
-                
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Rafaela</label>
-                                <label>Lima</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Beatriz</label>
-                                <label>Almeida</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Matheus</label>
-                                <label>Rangel</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Leandro</label>
-                                <label>Guilherme</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Julia</label>
-                                <label>Souza</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Vitor</label>
-                                <label>Fernandez</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Kleber</label>
-                                <label>Correia</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Maria</label>
-                                <label>Silva</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Marcus</label>
-                                <label>Amaral</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="container-favoritos">
-            <h1>Agenda</h1>
-            <div class="topop">
-                <input id="barraPesquisa02" type="text" placeholder="Pesquisar">
-                <button onclick="search()"><img src="./img/pesquisar-icon.png" alt="Pesquisar" height="50px" width="50px"></button>
-            </div>
-            
-            <button class="btcad" onclick="cadastrarc()"><img src="./img/add-contato.png" alt="Adicionar Contato" height="50px" width="50px"></button>
-            
-            <table id="table-favoritos">
-                <caption>Favoritos</caption>
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>João</label>
-                                <label>Silva</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Rafaela</label>
-                                <label>Lima</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Beatriz</label>
-                                <label>Almeida</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Matheus</label>
-                                <label>Rangel</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Leandro</label>
-                                <label>Guilherme</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Julia</label>
-                                <label>Souza</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Vitor</label>
-                                <label>Fernandez</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Kleber</label>
-                                <label>Correia</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Maria</label>
-                                <label>Silva</label>
-                                <label>email@forlogic.net</label>
-                                <label>Feminino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
+         
                 <tr>
                     <td>
                         <img class="img-user" src="./img/user.png">
@@ -398,23 +63,32 @@
                     </td>
                 </tr>
             </table>
-            <p><a href=""></a>&laquo<a href="">1</a><a href="">&raquo</a></p>
         </div>
 
         <div id="container-cadastrar">
-            <div id="cc-internal">
+            <form id="cc-internal">
                 <h1>Cadastro Contato</h1>
-                <p><label for="iimage">Imagem Perfil: </label><input id="iimage" type="image"></p>
-                <p><label for="inome">Nome: </label><input id="inome" type="text" placeholder="Nome Contato"></p>
+                <p><label for="iimage">Avatar: </label><input id="iavatar" type="url" placeholder="URL Avatar Contato"></p>
+                <p><label for="inome">Nome: </label><input id="inome" type="text" placeholder="Nome Contato" required></p>
                 <p><label for="isobrenome">Sobrenome: </label><input id="isobrenome" type="text" placeholder="Sobrenome Contato"></p>
                 <p><label for="iemail">Email: </label><input id="iemail" type="email" placeholder="Email Contato"></p>
-                <p><label for="igenero">Gênero: </label><input id="igenero" type="checkbox"></p>
+                
+                <p><fieldset id="igenero" aria-required="true"><legend>Gênero: </legend>
+                    <input type="radio" value="m" name="tsexo" id="imasculino"><label for="imasculino">Masculino</label>
+                    <input type="radio" value="f" name="tsexo" id="ifeminino"><label for="ifeminino">Feminino</label>
+                </fieldset></p>
                 <p><label for="icompanhia">Companhia: </label><input id="icompanhia" type="text" placeholder="Companhia Contato"></p>
                 <p><label for="iendereco">Endereço: </label><input id="iendereco" type="text" placeholder="Endereço Contato"></p>
-                <p><label for="itelefone">Telefone: </label><input id="itelefone" type="number" placeholder="Telefone Contato"></p><br>
-                <input onclick="cbtconfirmar()" class="btinput" type="button" value="Confimar">
-                <input onclick="cbtcancelar()" class="btinput" type="button" value="Cancelar">
-            </div>
+                <p><label for="itelefone">Telefone: </label><input id="itelefone" type="number" placeholder="Telefone Contato"></p>
+                <br>
+                <p><label for="icomentario">Comentário: </label><br><textarea id="icomentario" type="text" placeholder="Comentário sobre o Contato"></textarea></p>
+                <p><label for="iisfavorite">Favoritos: </label><input id="iisfavorite" type="checkbox"></p>
+                <br>
+                <input onclick="btConfirmarCadastro()" class="btinput" type="submit" value="Confimar">
+                <input onclick="btCancelarCadastro()" class="btinput" type="button" value="Cancelar">
+            </form>
+        </div>
+
         </div>
 
         <div id="container-vcont">
@@ -426,18 +100,24 @@
                 </div>
 
                 <div id="container-perfil">
-                    <img src="./img/user.png" alt="avatar" height="100px" width="100px" >
-                    <label>Nome: João</label>
-                    <label>Sobrenome: Silva</label>
-                    <label>Email: email@forlogic.net</label>
-                    <label>Gênero: Masculino</label>
+                    <p><img src="./img/user.png" alt="avatar" height="100px" width="100px">
+                        <br>
+                        <label for="eavatar">Url Avatar:</label><input id="eavatar" type="url">
+                    </p>
 
-                    <label>Companhia: Forlogic</label>
-                    <label>Endereço: 4974 Pedro Travessa</label>
-                    <label>Telefone: (23) 9147-2363</label>
+                    <p><label for="enome">Nome: </label><input id="enome" type="text"></p>
+                    <p><label for="esobrenome">Sobrenome: </label><input id="esobrenome" type="text"></p>
+                    <p><label for="eemail">Email: </label><input id="eemail" type="email"></p>
+                    <p><label for="egenero">Gênero: </label><input id="egenero"></p>
 
-                    <button onclick="btconfirmarperfil()">Confirmar</button>
-                    <button onclick="btcancelarperfil()">Cancelar</button>
+                    <p><label for="ecompanhia">Companhia: </label><input id="ecompanhia" type="text"></p>
+                    <p><label for="eendereco">Endereço: </label><input id="eendereco" type="text"></p>
+                    <p><label for="etelefone">Telefone: </label><input id="etelefone" type="number"></p>
+
+                    <p><label for="ecomentario">Comentário: </label><input id="ecomentario" type="text"></p>
+
+                    <button onclick="btConfirmarPerfil()">Confirmar</button>
+                    <button onclick="btCancelarPerfil()">Cancelar</button>
                 </div>
             </div>
         </div>

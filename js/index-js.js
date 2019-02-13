@@ -3,10 +3,28 @@
 let x=0;
 let y=0;
 
-function cbtmenu(){
+let contatos=[];
+
+let contato={
+    firstName: "",
+    lastName: "",
+    email: "", 
+    gender: "",
+    info: {
+        avatar: "",
+        company: "",
+        adress: "",
+        phone: "",
+        comments: ""
+    },
+    isFavorite: false,
+    id: ""
+}
+
+function btMenu(){
     if(y==0){
         document.getElementById("container-side").style.display="flex";
-        document.getElementById("btmenu").style.left="230px";
+        document.getElementById("btmenu").style.left="270px";
         y=1;
     }else{
         document.getElementById("container-side").style.display="none";
@@ -16,18 +34,45 @@ function cbtmenu(){
 }
 
 function search(){
-    
+
 }
 
-function cadastrarc(){
+function cadastrarContato(){
     document.getElementById("container-cadastrar").style.display="flex";
 }
 
-function cbtconfirmar(){
-    document.getElementById("container-cadastrar").style.display="none";
+function btConfirmarCadastro(){
+    contato.firstName=document.getElementById("inome").value;
+    contato.lastName=document.getElementById("isobrenome").value;
+    contato.email=document.getElementById("iemail").value;
+    contato.gender=document.getElementById("igenero").value;
+    contato.info.avatar=document.getElementById("iavatar");
+    contato.info.company=document.getElementById("icompanhia").value;
+    contato.info.adress=document.getElementById("iendereco").value;
+    contato.info.phone=document.getElementById("itelefone").value;
+    contato.info.comments=document.getElementById("icomentario").value;
+    contato.isFavorite=document.getElementById("iisfavorite").checked;
+    
+    contatos.push(contato);
+
+    limpaTelaCadastro();
 }
 
-function cbtcancelar(){
+function btCancelarCadastro(){
+    limpaTelaCadastro();
+}
+
+function limpaTelaCadastro(){
+    document.getElementById("inome").value="";
+    document.getElementById("isobrenome").value="";
+    document.getElementById("iemail").value="";
+    document.getElementById("imasculino").checked=false;
+    document.getElementById("ifeminino").checked=false;
+    document.getElementById("icompanhia").value="";
+    document.getElementById("iendereco").value="";
+    document.getElementById("itelefone").value="";
+    document.getElementById("icomentario").value="";
+    document.getElementById("iisfavorite").checked=false;
     document.getElementById("container-cadastrar").style.display="none";
 }
 
@@ -35,77 +80,31 @@ function visualizarContato(){
     document.getElementById("container-vcont").style.display="flex";
 }
 
-function btconfirmarperfil(){
+function btConfirmarPerfil(){
     document.getElementById("container-vcont").style.display="none";
 }
 
-function btcancelarperfil(){
+function btCancelarPerfil(){
     document.getElementById("container-vcont").style.display="none";
 }
 
-function cbtlogout(){
-    document.getElementById("container-logout").style.display="flex";
-}
-
-function cbtsim(){
-    window.location.href="../index.html";
-}
-
-function cbtnao(){
-    document.getElementById("container-logout").style.display="none";
-    if(x==0){
-        bthome();
-    }else if(x==1){
-        btcontato();
-    }else{
-        btfavorito();
-    }
-}
-
-function bthome(){
-    resetbts();
-    document.getElementById("ahome").style.backgroundColor="rgb(35, 68, 255)";
-    document.getElementById("ahome").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
-    document.getElementById("lihome").style.zIndex="3";
-    document.getElementById("container-contatos").style.display="none";
-    document.getElementById("container-favoritos").style.display="none";
-    document.getElementById("container-main").style.display="flex";
-    x=0;
-}
-
-function btcontato(){
+function btContato(){
     resetbts();
     document.getElementById("acontatos").style.backgroundColor="rgb(35, 68, 255)";
     document.getElementById("acontatos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     document.getElementById("licontatos").style.zIndex="3";
-    document.getElementById("container-favoritos").style.display="none";
-    document.getElementById("container-main").style.display="none";
-    document.getElementById("container-contatos").style.display="flex";
     x=1;
 }
 
-function btfavorito(){
+function btFavorito(){
     resetbts();
     document.getElementById("afavoritos").style.backgroundColor="rgb(35, 68, 255)";
     document.getElementById("afavoritos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     document.getElementById("lifavoritos").style.zIndex="3";
-    document.getElementById("container-main").style.display="none";
-    document.getElementById("container-contatos").style.display="none";
-    document.getElementById("container-favoritos").style.display="flex";
     x=2;
 }
 
-function btlogout(){
-    resetbts();
-    document.getElementById("asair").style.backgroundColor="rgb(35, 68, 255)";
-    document.getElementById("asair").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
-    document.getElementById("lisair").style.zIndex="3";
-}
-
 function resetbts(){
-    document.getElementById("ahome").style.backgroundColor="rgba(10, 10, 10, 0)";
-    document.getElementById("ahome").style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
-    document.getElementById("lihome").style.zIndex="2";
     document.getElementById("acontatos").style.backgroundColor="rgba(10, 10, 10, 0)";
     document.getElementById("acontatos").style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
     document.getElementById("licontatos").style.zIndex="2";
