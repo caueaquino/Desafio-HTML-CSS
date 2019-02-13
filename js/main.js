@@ -21,5 +21,5 @@ let contato={
 }
 
 function cadastrarContato(){
-
+    
 }

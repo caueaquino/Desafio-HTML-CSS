@@ -15,6 +15,10 @@ function cbtmenu(){
     }
 }
 
+function search(){
+    
+}
+
 function cadastrarc(){
     document.getElementById("container-cadastrar").style.display="flex";
 }
