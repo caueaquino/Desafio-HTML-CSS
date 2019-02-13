@@ -5,6 +5,8 @@ let y=0;
 
 let contatos=[];
 
+let favoritos=[];
+
 let contato={
     firstName: "",
     lastName: "",
@@ -45,7 +47,13 @@ function btConfirmarCadastro(){
     contato.firstName=document.getElementById("inome").value;
     contato.lastName=document.getElementById("isobrenome").value;
     contato.email=document.getElementById("iemail").value;
-    contato.gender=document.getElementById("igenero").checked;
+    if(document.getElementById("imasculino").checked==true){
+        contato.gender="m";
+    }else if(document.getElementById("ifeminino").checked==true){
+        contato.gender="f";
+    }else{
+        contato.gender="";
+    }
     contato.info.avatar=document.getElementById("iavatar").value;
     contato.info.company=document.getElementById("icompanhia").value;
     contato.info.adress=document.getElementById("iendereco").value;
@@ -94,6 +102,8 @@ function btContato(){
     document.getElementById("acontatos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     document.getElementById("licontatos").style.zIndex="3";
     x=1;
+
+    document.getElementById("h2-type").innerText="Contatos";
 }
 
 function btFavorito(){
@@ -102,6 +112,8 @@ function btFavorito(){
     document.getElementById("afavoritos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     document.getElementById("lifavoritos").style.zIndex="3";
     x=2;
+
+    document.getElementById("h2-type").innerText="Favoritos";
 }
 
 function resetbts(){

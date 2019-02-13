@@ -25,48 +25,26 @@
             </div>
             
             <button class="btcad" onclick="cadastrarContato()">Cadastrar Contato&nbsp;&nbsp;<img src="./img/add-contato.png" alt="Adicionar Contato" height="35px" width="35px"></button>
+            
+            <h2 id="h2-type">Contatos</h2>
 
-            <table id="table-contatos">
-                <caption>Contatos</caption>
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>João</label>
-                                <label>Silva</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                <button onclick="visualizarContato()">Visualizar Contato</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-         
-                <tr>
-                    <td>
-                        <img class="img-user" src="./img/user.png">
-                        <div class="container-td">
-                            <div class="container-dados">
-                                <label>Marcus</label>
-                                <label>Amaral</label>
-                                <label>email@forlogic.net</label>
-                                <label>Masculino</label>
-                            </div>    
-                            <div class="container-bts">
-                                    <button onclick="visualizarContato()">Visualizar Contato</button>
-                                    <img class="ifavorito" src="img/favorit-icon.png" alt="Favorito">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+            <div id="contacts-field">
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+                <button class="contact-data">Visualizar Dados</button>
+            </div>
+            </div>
+        </div>  
 
         <div id="container-cadastrar">
-            <form id="cc-internal">
+            <form id="cc-internal" action="">
                 <h1>Cadastro Contato</h1>
                 <p><label for="iimage">Avatar: </label><input id="iavatar" type="url" placeholder="URL Avatar Contato"></p>
                 <p><label for="inome">Nome: </label><input id="inome" type="text" placeholder="Nome Contato"></p>
