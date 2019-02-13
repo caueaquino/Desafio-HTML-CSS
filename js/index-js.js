@@ -45,8 +45,8 @@ function btConfirmarCadastro(){
     contato.firstName=document.getElementById("inome").value;
     contato.lastName=document.getElementById("isobrenome").value;
     contato.email=document.getElementById("iemail").value;
-    contato.gender=document.getElementById("igenero").value;
-    contato.info.avatar=document.getElementById("iavatar");
+    contato.gender=document.getElementById("igenero").checked;
+    contato.info.avatar=document.getElementById("iavatar").value;
     contato.info.company=document.getElementById("icompanhia").value;
     contato.info.adress=document.getElementById("iendereco").value;
     contato.info.phone=document.getElementById("itelefone").value;
