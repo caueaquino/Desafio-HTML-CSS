@@ -84,7 +84,7 @@ function limpaTelaCadastro(){
     document.getElementById("container-cadastrar").style.display="none";
 }
 
-function visualizarContato(){
+function contactView(){
     document.getElementById("container-vcont").style.display="flex";
 }
 
