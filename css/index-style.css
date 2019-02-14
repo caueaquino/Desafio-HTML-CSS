@@ -102,11 +102,10 @@ body {
 #container-contatos {
     display: flex;
     color: white;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
     z-index: 4;
     background-color: rgba(0, 0, 0, 0);
-    box-shadow: -2px 0px 10px rgb(10, 10, 10);
     flex-direction: column;
     align-items: center;
     align-content: center;
@@ -149,15 +148,14 @@ body {
 }
 
 .topop button {
-    padding: 5px;
+    padding: 8px;
+    margin-left: -8px;
     margin-bottom: 40px;
-    border-radius: 40px;
+    border-radius: 25px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-left: none;
     box-shadow: 0px 0x 5px rgba(0, 0, 0, 0.705);
-    background-color: rgba(240, 248, 255, 0.562);
+    background-color: rgb(225, 241, 255);
     transition: all 0.5s;
-    border-radius: 0px 10px 10px 0px;
 }
 
 #barraPesquisa:hover {
@@ -165,7 +163,7 @@ body {
 }
 
 .topop button:hover {
-    background-color: rgba(240, 248, 255, 0.85);
+    -webkit-transform: scale(1.1);
 }
 
 #barraPesquisa:focus {
@@ -223,29 +221,41 @@ body {
     justify-content: center;
 }
 
+#not-contacts, #not-favorits {
+    margin-top: 45px;
+    font-size: 26pt;
+    font-family: "Montserrat",sans-serif;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
 /* Div interna com um Contato */
 
 .contact-data {
-    background-color: aliceblue;
+    background-color: rgba(17, 61, 255, 0.603);
     border-radius: 20px;
     margin: 30px;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
     border: none;
     transition: all 0.5s;
-    font-family: "Montserrat",sans-serif;
-    font-size: 22pt;
-    color: rgba(129, 129, 129, 0);
-    height: 250px;
-    width: 250px;
+    width: 260px;
     display: flex;
     flex-direction: column;
+    -webkit-transform: scale(1.1);
+    box-shadow: 0px 0px 10px black;
+}
+
+.contac h2{
+    font-size: 18pt;
+    text-shadow: 0px 0px 5px black;
+    font-family: "Montserrat",sans-serif;
 }
 
 .contact-data:hover {
     -webkit-transform: scale(1.2);
-    color: rgba(129, 129, 129, 0.87);
+    background-color: rgba(17, 61, 255, 0.301);
 }
 
 .contact-data:focus {
@@ -253,15 +263,103 @@ body {
 }
 
 .contact-data img {
-    margin: 10px;
-    border: 1px solid red;
+    margin: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
+    border: none;
+}
+
+.contact-data label {
+    font-size: 12pt;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-family: "Montserrat",sans-serif;
+    border-top: 0px;
+    width: 230px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+}
+
+.contact-data .lcontact {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 13pt;
+}
+
+.contact-data .internal-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 61, 61, 0.308);
     border-radius: 20px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.contact-data .internal-view:hover {
+    opacity: 1;
+}
+
+.contact-data .internal-view button {
+    font-weight: 500;
+    font-family: "Montserrat",sans-serif;
+    border-radius: 10px;
+    background-color: rgba(17, 61, 255, 0.719);
+    color: rgb(240, 248, 255);
+    padding: 10px 35px 10px 35px;
+    transition: all 1s;
+}
+
+.contact-data .internal-view button:hover {
+    -webkit-transform: scale(1.2);
+}
+
+.contact-data .internal-view button:focus {
+    outline-style: none;
+}
+
+.contact-data button {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    font-size: 15pt;
+    font-weight: 600;
+    background-color: rgba(0, 60, 255, 0.829);
+    border:none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+    color: white;
+    box-shadow: 0px 0px 10px black;
+}
+
+.contact button:hover {
+
+}
+
+.contact-data button:focus {
+    outline-style: none;
+}
+
+.contact-data button img {
+    border: none;
+    margin: 0px 0px 0px 10px;
 }
 
 /* Div do Cadastrar do Contato */
 
 #container-cadastrar {
-    position: fixed;
+    position: absolute;
     z-index: 12;
     background-color: rgba(0, 0, 0, 0.705);
     width: 100%;
@@ -281,7 +379,7 @@ body {
     font-family: "Montserrat",sans-serif;background-color: aliceblue;
     border-radius: 20px;
     padding: 20px;
-    margin:2px;
+    margin: 15px;
     overflow: auto;
 }
 
@@ -332,17 +430,15 @@ body {
 /* Divs Externas Visualização Dados do Contato */
 
 #container-vcont {
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 10;
-    height: 100vh;
+    position: absolute;
+    z-index: 12;
+    background-color: rgba(0, 0, 0, 0.705);
     width: 100%;
+    min-height: 100vh;
     display: none;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    position: fixed;
-    min-height: 100vh;
-    z-index: 12;
+    align-items: center;
 }
 
 #container-op {
@@ -353,6 +449,15 @@ body {
     justify-content: center;
     border-radius: 20px;
     padding: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#container-op h2 {
+    font-size: 24pt;
+    font-family: "Montserrat",sans-serif;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 /* Div com botões Editar, Excluir, Favoritar Contato*/
@@ -374,60 +479,69 @@ body {
 }
 
 #container-opts button:hover {
-    -webkit-transform: scale(1.3);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.603);
+    -webkit-transform: scale(1.4);
 }
+
+#container-opts button:focus {
+    outline-style: none;
+}
+
 
 /* Div com dados do contato  */
 
 #container-perfil {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     font-family: "Montserrat",sans-serif;
-}
-
-#container-perfil p {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.644);
-    background-color: rgb(214, 236, 255);
-    padding: 5px;
-    border-radius: 10px;
-    margin-bottom: 8px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 300px;
 }
 
 #container-perfil label {
-    border-radius: 20px;
-    font-size: 13pt;
-}
-
-#container-perfil input {
+    padding: 3px;
     font-size: 12pt;
-    border-radius: 5px;
-    border: 0px;
+    margin: 5px;
 }
 
-#container-perfil input:focus {
+#container-perfil .editInput, #container-perfil textarea {
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 12pt;
+    border: 1px solid rgba(0, 0, 0, 0.63);
+    border-radius: 10px;
+    width: 90%;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+
+#container-perfil input:focus, #container-perfil textarea:focus {
     outline-style: none;
     border: 1px solid rgb(0, 174, 255);
 }
 
-#container-perfil button {
-    background-color: rgba(240, 248, 255, 0);
-    color: black;
-    border: 2px solid black;
+.bteinput {
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 12pt;
+    border: 1px solid rgba(0, 0, 0, 0.63);
     border-radius: 10px;
-    font-weight: 500;
-    font-size: 13pt;
-    margin-top: 6px;
-    padding: 5px;
+    width: 90%;
+    background-color: rgba(142, 195, 255, 0.445);
     transition: all 0.5s;
 }
 
-#container-perfil button:hover {
+.bteinput:hover {
     -webkit-transform: scale(1.3);
 }
 
-#container-perfil button:focus {
+.bteinput:focus {
     outline-style: none;
+}
+
+#btEditConf, #btEditCanc {
+    display: none;
 }

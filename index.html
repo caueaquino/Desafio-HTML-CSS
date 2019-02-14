@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="./css/index-style.css">
         <script src="./js/index-js.js"></script>
     </head>
-    <body>
+    <body onload="setData()">
         <ul id="container-side">
             <li id="licontatos"><button id="acontatos" onclick="btContato()"><img src="./img/icon-contato.png" alt="Contatos" height="100px" width="100px"><p>CONTATOS</p></button></li>
             <li id="lifavoritos"><button id="afavoritos" onclick="btFavorito()"><img src="./img/icon-favoritos.png" alt="Favoritos" height="100px" width="100px"><p>FAVORITOS</p></button></li>
@@ -21,80 +21,67 @@
             <h1>Agenda</h1>
             <div class="topop">
                 <input id="barraPesquisa" type="text" placeholder="Pesquisar">
-                <button onclick="search()"><img src="./img/pesquisar-icon.png" alt="Pesquisar" height="28px" width="28px"></button>
+                <button onclick="search()"><img src="./img/pesquisar-icon.png" alt="Pesquisar" height="35px" width="35px"></button>
             </div>
             
             <button class="btcad" onclick="cadastrarContato()">Cadastrar Contato&nbsp;&nbsp;<img src="./img/add-contato.png" alt="Adicionar Contato" height="35px" width="35px"></button>
             
             <h2 id="h2-type">Contatos</h2>
 
-            <div id="contacts-field">
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button>
-                <button class="contact-data" onclick="contactView()"><img src="./img/user.png" height="230px" width="230px"></button></div>
+            <div id="contacts-field"></div>
+                <h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>
+                <h2 id="not-favorits">Não Há Contatos Favoritos !</h2>
             </div>
         </div>  
 
         <div id="container-cadastrar">
-            <form id="cc-internal" action="">
+            <form id="cc-internal">
                 <h1>Cadastro Contato</h1>
-                <p><label for="iimage">Avatar: </label><input id="iavatar" type="url" placeholder="URL Avatar Contato"></p>
-                <p><label for="inome">Nome: </label><input id="inome" type="text" placeholder="Nome Contato"></p>
-                <p><label for="isobrenome">Sobrenome: </label><input id="isobrenome" type="text" placeholder="Sobrenome Contato"></p>
-                <p><label for="iemail">Email: </label><input id="iemail" type="email" placeholder="Email Contato"></p>
+                <p><label for="iavatar">Url Avatar: </label><br><input id="iavatar" type="text" placeholder="URL Avatar Contato"></p>
+                <p><label for="inome">Nome: </label><br><input id="inome" type="text" placeholder="Nome Contato"></p>
+                <p><label for="isobrenome">Sobrenome: </label><br><input id="isobrenome" type="text" placeholder="Sobrenome Contato"></p>
+                <p><label for="iemail">Email: </label><br><input id="iemail" type="email" placeholder="Email Contato"></p>
                 
-                <p><fieldset id="igenero" aria-required="true"><legend>Gênero: </legend>
-                    <input type="radio" value="m" name="tsexo" id="imasculino"><label for="imasculino">Masculino</label>
-                    <input type="radio" value="f" name="tsexo" id="ifeminino"><label for="ifeminino">Feminino</label>
+                <p><fieldset id="igenero"><legend>Gênero: </legend>
+                    <input type="radio" name="tsexo" id="imasculino"><label for="imasculino">Masculino</label>
+                    <input type="radio" name="tsexo" id="ifeminino"><label for="ifeminino">Feminino</label>
                 </fieldset></p>
-                <p><label for="icompanhia">Companhia: </label><input id="icompanhia" type="text" placeholder="Companhia Contato"></p>
-                <p><label for="iendereco">Endereço: </label><input id="iendereco" type="text" placeholder="Endereço Contato"></p>
-                <p><label for="itelefone">Telefone: </label><input id="itelefone" type="number" placeholder="Telefone Contato"></p>
+                <p><label for="icompanhia">Companhia: </label><br><input id="icompanhia" type="text" placeholder="Companhia Contato"></p>
+                <p><label for="iendereco">Endereço: </label><br><input id="iendereco" type="text" placeholder="Endereço Contato"></p>
+                <p><label for="itelefone">Telefone: </label><br><input id="itelefone" type="number" placeholder="Telefone Contato"></p>
                 <br>
                 <p><label for="icomentario">Comentário: </label><br><textarea id="icomentario" type="text" placeholder="Comentário sobre o Contato"></textarea></p>
-                <p><label for="iisfavorite">Favoritos: </label><input id="iisfavorite" type="checkbox"></p>
+                <p><label for="iisfavorite">Favoritos: </label><br><input id="iisfavorite" type="checkbox"></p>
                 <br>
                 <input onclick="btConfirmarCadastro()" class="btinput" type="button" value="Confimar">
                 <input onclick="btCancelarCadastro()" class="btinput" type="button" value="Cancelar">
             </form>
         </div>
 
-        </div>
-
         <div id="container-vcont">
             <div id="container-op">
                 <div id="container-opts">
-                    <button><img id="ieditar" src="./img/edit.png" alt="Editar" height="35px" width="35px"></button>
+                    <button><img id="ieditar" src="./img/edit.png" onclick="editContact()" alt="Editar" height="35px" width="35px"></button>
                     <button><img id="iexcluir" src="./img/delete02.png" alt="Excluir" height="35px" width="35px;"></button>
                     <button><img id="ifavoritar" src="./img/icon-favorito.png" alt="Favoritar" height="35px" width="35px"></button>
                 </div>
-
+                <h2>Perfil Contato</h2>
                 <div id="container-perfil">
-                    <p><img src="./img/user.png" alt="avatar" height="100px" width="100px">
-                        <br>
-                        <label for="eavatar">Url Avatar:</label><input id="eavatar" type="url">
-                    </p>
+                    <p><label for="eavatar">Url Avatar:</label><br><input id="eavatar" class="editInput" type="text" disabled></p>
+                    <p><label for="enome">Nome: </label><br><input id="enome" class="editInput" type="text" disabled></p>
+                    <p><label for="esobrenome">Sobrenome: </label><br><input id="esobrenome" class="editInput" type="text" disabled></p>
+                    <p><label for="eemail">Email: </label><br><input id="eemail" class="editInput" type="email" disabled></p>
 
-                    <p><label for="enome">Nome: </label><input id="enome" type="text"></p>
-                    <p><label for="esobrenome">Sobrenome: </label><input id="esobrenome" type="text"></p>
-                    <p><label for="eemail">Email: </label><input id="eemail" type="email"></p>
-                    <p><label for="egenero">Gênero: </label><input id="egenero"></p>
+                    <p><label for="ecompanhia">Companhia: </label><br><input id="ecompanhia" class="editInput" type="text" disabled></p>
+                    <p><label for="eendereco">Endereço: </label><br><input id="eendereco" class="editInput" type="text" disabled></p>
+                    <p><label for="etelefone">Telefone: </label><br><input id="etelefone" class="editInput" type="number" disabled></p>
 
-                    <p><label for="ecompanhia">Companhia: </label><input id="ecompanhia" type="text"></p>
-                    <p><label for="eendereco">Endereço: </label><input id="eendereco" type="text"></p>
-                    <p><label for="etelefone">Telefone: </label><input id="etelefone" type="number"></p>
+                    <p><label for="ecomentario">Comentário: </label><br><textarea id="ecomentario" class="editInput" type="text" disabled></textarea></p>
+                    <br>
+                    <input id="btEditConf" class="bteinput" type="button" value="Confirmar" onclick="btConfirmarPerfil()">
+                    <input id="btEditCanc" class="bteinput" type="button" value="Cancelar" onclick="btCancelarPerfil()">
 
-                    <p><label for="ecomentario">Comentário: </label><input id="ecomentario" type="text"></p>
-
-                    <button onclick="btConfirmarPerfil()">Confirmar</button>
-                    <button onclick="btCancelarPerfil()">Cancelar</button>
+                    <input id="btEditSair" class="bteinput" type="button" value="Sair" onclick="btCloseView()">
                 </div>
             </div>
         </div>
