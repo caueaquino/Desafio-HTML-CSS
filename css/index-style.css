@@ -181,13 +181,13 @@ body {
 .btcad {
     padding:8px 13px 8px 13px;
     border-radius: 15px;
-    border: 1px solid rgba(175, 175, 175, 0.219);
+    border: 1px solid rgba(0, 0, 0, 0.219);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.753);
     background-color: rgba(17, 61, 255, 0.603);
     transition: all 0.5s;
     margin-bottom: 30px;
     font-family: "Montserrat",sans-serif;
-    font-size: 14pt;
+    font-size: 16pt;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -227,9 +227,8 @@ body {
 
 .contact-data {
     background-color: aliceblue;
-    margin: 30px;
     border-radius: 20px;
-    padding: 5px;
+    margin: 30px;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
@@ -238,12 +237,10 @@ body {
     font-family: "Montserrat",sans-serif;
     font-size: 22pt;
     color: rgba(129, 129, 129, 0);
-    background-image: url(../img/user.png);
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-size: contain;
     height: 250px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-data:hover {
@@ -256,7 +253,9 @@ body {
 }
 
 .contact-data img {
-    position: static;
+    margin: 10px;
+    border: 1px solid red;
+    border-radius: 20px;
 }
 
 /* Div do Cadastrar do Contato */
