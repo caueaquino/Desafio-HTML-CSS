@@ -28,7 +28,7 @@
             
             <h2 id="h2-type">Contatos</h2>
 
-            <div id="contacts-field"></div>
+            <div id="contacts-field">
                 <h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>
                 <h2 id="not-favorits">Não Há Contatos Favoritos !</h2>
             </div>
@@ -61,9 +61,9 @@
         <div id="container-vcont">
             <div id="container-op">
                 <div id="container-opts">
-                    <button><img id="ieditar" src="./img/edit.png" onclick="editContact()" alt="Editar" height="35px" width="35px"></button>
-                    <button><img id="iexcluir" src="./img/delete02.png" alt="Excluir" height="35px" width="35px;"></button>
-                    <button><img id="ifavoritar" src="./img/icon-favorito.png" alt="Favoritar" height="35px" width="35px"></button>
+                    <button id="edit-contact" onclick="editContact()"></button>
+                    <button id="delete-contact" onclick=""></button>
+                    <button id="favorite-contact" onclick=""></button>
                 </div>
                 <h2>Perfil Contato</h2>
                 <div id="container-perfil">
@@ -83,6 +83,9 @@
 
                     <input id="btEditSair" class="bteinput" type="button" value="Sair" onclick="btCloseView()">
                 </div>
+            </div>
+            <div id="yes-no-ex">
+                
             </div>
         </div>
     </body>

@@ -21,14 +21,14 @@ let contato={
     },
     isFavorite: false,
     id: ""
-}
+};
 
-function setData(){
+let setData = () => {
     
     btContato();
-}
+};
 
-function btMenu(){
+let btMenu = () => {
     if(y==0){
         document.getElementById("container-side").style.display="flex";
         document.getElementById("btmenu").style.left="270px";
@@ -38,17 +38,17 @@ function btMenu(){
         document.getElementById("btmenu").style.left="10px";
         y=0;
     }
-}
+;}
 
-function search(){
+let search = () => {
 
-}
+};
 
-function cadastrarContato(){
+let cadastrarContato = () => {
     document.getElementById("container-cadastrar").style.display="flex";
-}
+};
 
-function btConfirmarCadastro(){
+let btConfirmarCadastro = () => {
     contato.firstName=document.getElementById("inome").value;
     contato.lastName=document.getElementById("isobrenome").value;
     contato.email=document.getElementById("iemail").value;
@@ -74,13 +74,13 @@ function btConfirmarCadastro(){
 
     limpaTelaCadastro();
     btContato();
-}
+};
 
-function btCancelarCadastro(){
+let btCancelarCadastro = () => {
     limpaTelaCadastro();
-}
+};
 
-function limpaTelaCadastro(){
+let limpaTelaCadastro = () => {
     document.getElementById("inome").value="";
     document.getElementById("isobrenome").value="";
     document.getElementById("iemail").value="";
@@ -92,9 +92,9 @@ function limpaTelaCadastro(){
     document.getElementById("icomentario").value="";
     document.getElementById("iisfavorite").checked=false;
     document.getElementById("container-cadastrar").style.display="none";
-}
+};
 
-function contactView(){
+let contactView = () => {
     document.getElementById("eavatar").value="./img/user.png";
     document.getElementById("enome").value="caue";
     document.getElementById("esobrenome").value="aquino nogueira";
@@ -104,9 +104,9 @@ function contactView(){
     document.getElementById("etelefone").value="11964984447";
     document.getElementById("ecomentario").value="algum comentario";
     document.getElementById("container-vcont").style.display="flex";
-}
+};
 
-function editContact(){
+let editContact = () => {
     document.getElementById("eavatar").disabled=false;
     document.getElementById("enome").disabled=false;
     document.getElementById("esobrenome").disabled=false;
@@ -116,26 +116,48 @@ function editContact(){
     document.getElementById("etelefone").disabled=false;
     document.getElementById("ecomentario").disabled=false;
 
+    document.getElementById("eavatar").style.backgroundColor="white";
+    document.getElementById("enome").style.backgroundColor="white";
+    document.getElementById("esobrenome").style.backgroundColor="white";
+    document.getElementById("eemail").style.backgroundColor="white";
+    document.getElementById("ecompanhia").style.backgroundColor="white";
+    document.getElementById("eendereco").style.backgroundColor="white";
+    document.getElementById("etelefone").style.backgroundColor="white";
+    document.getElementById("ecomentario").style.backgroundColor="white";
+
+    document.getElementById("eavatar").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("enome").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("esobrenome").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("eemail").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("ecompanhia").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("eendereco").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("etelefone").style.border="1px solid rgba(0, 0, 0, 0.63)";
+    document.getElementById("ecomentario").style.border="1px solid rgba(0, 0, 0, 0.63)";
+
     document.getElementById("btEditSair").style.display="none";
     document.getElementById("btEditConf").style.display="block";
     document.getElementById("btEditCanc").style.display="block";
-}
+};
 
-function btConfirmarPerfil(){
+let deleteContact = () => {
+
+};
+
+let btConfirmarPerfil = () =>{
     disableEdit();
     hideEdit();
-}
+};
 
-function btCancelarPerfil(){
+let btCancelarPerfil = () => {
     disableEdit();
     hideEdit();
-}
+};
 
-function btCloseView(){
+let btCloseView = () => {
     document.getElementById("container-vcont").style.display="none";
-}
+};
 
-function disableEdit(){
+let disableEdit = () => {
     document.getElementById("eavatar").disabled=true;
     document.getElementById("enome").disabled=true;
     document.getElementById("esobrenome").disabled=true;
@@ -144,15 +166,33 @@ function disableEdit(){
     document.getElementById("eendereco").disabled=true;
     document.getElementById("etelefone").disabled=true;
     document.getElementById("ecomentario").disabled=true;
-}
+};
 
-function hideEdit(){
+let hideEdit = () =>{
     document.getElementById("btEditConf").style.display="none";
     document.getElementById("btEditCanc").style.display="none";
     document.getElementById("btEditSair").style.display="block";
-}
 
-function btContato(){
+    document.getElementById("eavatar").style.backgroundColor="rgba(240, 248, 255, 0)";  
+    document.getElementById("enome").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("esobrenome").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("eemail").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("ecompanhia").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("eendereco").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("etelefone").style.backgroundColor="rgba(240, 248, 255, 0)";
+    document.getElementById("ecomentario").style.backgroundColor="rgba(240, 248, 255, 0)";
+
+    document.getElementById("eavatar").style.border="none";
+    document.getElementById("enome").style.border="none";
+    document.getElementById("esobrenome").style.border="none";
+    document.getElementById("eemail").style.border="none";
+    document.getElementById("ecompanhia").style.border="none";
+    document.getElementById("eendereco").style.border="none";
+    document.getElementById("etelefone").style.border="none";
+    document.getElementById("ecomentario").style.border="none";
+};
+
+let btContato = () => {
     resetbts();
     document.getElementById("acontatos").style.backgroundColor="rgb(35, 68, 255)";
     document.getElementById("acontatos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
@@ -164,6 +204,11 @@ function btContato(){
     if(contatos.length>0){
 
         let x=document.getElementById("contacts-field");
+
+        x.innerHTML='<div id="contacts-field">'+
+                        '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
+                        '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
+                    '</div>';
 
         for(i=0;i<10||i<contatos.length;i++){
 
@@ -185,9 +230,9 @@ function btContato(){
     }else{
         document.getElementById("not-contacts").style.display="block";
     }
-}
+};
 
-function btFavorito(){
+let btFavorito = () => {
     resetbts();
     document.getElementById("afavoritos").style.backgroundColor="rgb(35, 68, 255)";
     document.getElementById("afavoritos").style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
@@ -200,6 +245,11 @@ function btFavorito(){
     if(favoritos.length>0){
 
         let x=document.getElementById("contacts-field");
+
+        x.innerHTML='<div id="contacts-field">'+
+                        '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
+                        '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
+                    '</div>';
 
         for(i=0;i<10||i<favoritos.length;i++){
             
@@ -221,9 +271,9 @@ function btFavorito(){
     }else{
         document.getElementById("not-favorits").style.display="block";
     }
-}
+};
 
-function resetbts(){
+let resetbts = () => {
     document.getElementById("acontatos").style.backgroundColor="rgba(10, 10, 10, 0)";
     document.getElementById("acontatos").style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
     document.getElementById("licontatos").style.zIndex="2";
@@ -232,4 +282,4 @@ function resetbts(){
     document.getElementById("lifavoritos").style.zIndex="2";
     document.getElementById("not-contacts").style.display="none";
     document.getElementById("not-favorits").style.display="none";
-}
+};

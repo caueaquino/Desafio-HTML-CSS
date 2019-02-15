@@ -442,7 +442,7 @@ body {
 }
 
 #container-op {
-    background-color: aliceblue;
+    background-color: rgb(217, 237, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -456,8 +456,8 @@ body {
 #container-op h2 {
     font-size: 24pt;
     font-family: "Montserrat",sans-serif;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 /* Div com botões Editar, Excluir, Favoritar Contato*/
@@ -473,9 +473,14 @@ body {
 #container-opts button{
     background-color: rgba(61, 87, 253, 0);
     border: none;
-    border-radius: 20px;
-    margin: 6px;
+    margin-left: 20px;
+    margin-right: 20px;
     transition: all 0.5s;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: contain;
 }
 
 #container-opts button:hover {
@@ -486,6 +491,29 @@ body {
     outline-style: none;
 }
 
+#delete-contact {
+    background-image: url("../img/delete02.png");
+}
+
+#delete-contact:hover {
+    background-image: url("../img/delete01.png");
+}
+
+#favorite-contact {
+    background-image: url("../img/icon-favorito.png");
+}
+
+#favorite-contact:hover {
+    background-image: url("../img/favorit-icon.png");
+}
+
+#edit-contact {
+    background-image: url("../img/edit.png");
+}
+
+#edit-contact:hover {
+    background-image: url("../img/edit01.png");
+}
 
 /* Div com dados do contato  */
 
@@ -494,7 +522,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: "Montserrat",sans-serif;
-    background-color: aliceblue;
+    background-color: rgba(215, 237, 255, 0);
     border-radius: 20px;
     width: 300px;
 }
@@ -510,7 +538,6 @@ body {
     margin-top: 2px;
     margin-bottom: 2px;
     font-size: 12pt;
-    border: 1px solid rgba(0, 0, 0, 0.63);
     border-radius: 10px;
     width: 90%;
     background-color: rgba(240, 248, 255, 0);
@@ -535,7 +562,7 @@ body {
 }
 
 .bteinput:hover {
-    -webkit-transform: scale(1.3);
+    -webkit-transform: scale(1.2);
 }
 
 .bteinput:focus {
