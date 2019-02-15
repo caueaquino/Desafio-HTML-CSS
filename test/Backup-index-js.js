@@ -1,5 +1,6 @@
 // Javascript Document
 
+
 let x=0;
 let y=0;
 
@@ -26,7 +27,7 @@ let contato={
 let setData = () => {
     
     btContato();
-};
+}
 
 let btMenu = () => {
     if(y==0){
@@ -38,15 +39,15 @@ let btMenu = () => {
         document.getElementById("btmenu").style.left="10px";
         y=0;
     }
-;}
+}
 
 let search = () => {
 
-};
+}
 
 let cadastrarContato = () => {
     document.getElementById("container-cadastrar").style.display="flex";
-};
+}
 
 let btConfirmarCadastro = () => {
     contato.firstName=document.getElementById("inome").value;
@@ -74,11 +75,11 @@ let btConfirmarCadastro = () => {
 
     limpaTelaCadastro();
     btContato();
-};
+}
 
 let btCancelarCadastro = () => {
     limpaTelaCadastro();
-};
+}
 
 let limpaTelaCadastro = () => {
     document.getElementById("inome").value="";
@@ -92,7 +93,7 @@ let limpaTelaCadastro = () => {
     document.getElementById("icomentario").value="";
     document.getElementById("iisfavorite").checked=false;
     document.getElementById("container-cadastrar").style.display="none";
-};
+}
 
 let contactView = () => {
     document.getElementById("eavatar").value="./img/user.png";
@@ -104,7 +105,7 @@ let contactView = () => {
     document.getElementById("etelefone").value="11964984447";
     document.getElementById("ecomentario").value="algum comentario";
     document.getElementById("container-vcont").style.display="flex";
-};
+}
 
 let editContact = () => {
     document.getElementById("eavatar").disabled=false;
@@ -137,25 +138,25 @@ let editContact = () => {
     document.getElementById("btEditSair").style.display="none";
     document.getElementById("btEditConf").style.display="block";
     document.getElementById("btEditCanc").style.display="block";
-};
+}
 
 let deleteContact = () => {
 
-};
+}
 
 let btConfirmarPerfil = () =>{
     disableEdit();
     hideEdit();
-};
+}
 
 let btCancelarPerfil = () => {
     disableEdit();
     hideEdit();
-};
+}
 
 let btCloseView = () => {
     document.getElementById("container-vcont").style.display="none";
-};
+}
 
 let disableEdit = () => {
     document.getElementById("eavatar").disabled=true;
@@ -166,7 +167,7 @@ let disableEdit = () => {
     document.getElementById("eendereco").disabled=true;
     document.getElementById("etelefone").disabled=true;
     document.getElementById("ecomentario").disabled=true;
-};
+}
 
 let hideEdit = () =>{
     document.getElementById("btEditConf").style.display="none";
@@ -190,7 +191,7 @@ let hideEdit = () =>{
     document.getElementById("eendereco").style.border="none";
     document.getElementById("etelefone").style.border="none";
     document.getElementById("ecomentario").style.border="none";
-};
+}
 
 let btContato = () => {
     resetbts();
@@ -230,7 +231,7 @@ let btContato = () => {
     }else{
         document.getElementById("not-contacts").style.display="block";
     }
-};
+}
 
 let btFavorito = () => {
     resetbts();
@@ -271,7 +272,7 @@ let btFavorito = () => {
     }else{
         document.getElementById("not-favorits").style.display="block";
     }
-};
+}
 
 let resetbts = () => {
     document.getElementById("acontatos").style.backgroundColor="rgba(10, 10, 10, 0)";
@@ -282,4 +283,4 @@ let resetbts = () => {
     document.getElementById("lifavoritos").style.zIndex="2";
     document.getElementById("not-contacts").style.display="none";
     document.getElementById("not-favorits").style.display="none";
-};
+}

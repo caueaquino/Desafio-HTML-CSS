@@ -7,15 +7,27 @@
         <title>Agenda Digital</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" media="screen" href="./css/index-style.css">
-        <script src="./js/index-js.js"></script>
+
+        <script src="./js/api.js"></script>
+        <script src="./js/sideMenu.js"></script>
+        <script src="./js/contactArea.js"></script>
+        <script src="./js/createContact.js"></script>
+        <script src="./js/viewContact.js"></script>
+        <script src="./js/dataContacts.js"></script>
+        <script src="./js/elementsHTML.js"></script>
+        
     </head>
-    <body onload="setData()">
+    <body>
         <ul id="container-side">
             <li id="licontatos"><button id="acontatos" onclick="btContato()"><img src="./img/icon-contato.png" alt="Contatos" height="100px" width="100px"><p>CONTATOS</p></button></li>
             <li id="lifavoritos"><button id="afavoritos" onclick="btFavorito()"><img src="./img/icon-favoritos.png" alt="Favoritos" height="100px" width="100px"><p>FAVORITOS</p></button></li>
         </ul>
 
         <button id="btmenu" onclick="btMenu()">☰</button>
+
+        <div id="container-loading">
+            <h1>Carregando...</h1>
+        </div>
 
         <div id="container-contatos">
             <h1>Agenda</h1>

@@ -19,6 +19,26 @@ body {
     background-attachment: fixed;
 }
 
+/* Div Carregamento */
+
+#container-loading {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.767);
+    z-index: 12;
+}
+
+#container-loading h1{
+    color: white;
+    font-size: 36pt;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+}
+
 /* Div da side bar com Menu */
 
 #container-side {
@@ -290,6 +310,11 @@ body {
     font-size: 13pt;
 }
 
+.contact-data .fimg {
+    margin-top: -20px;
+    border-radius: 0px;
+}
+
 .contact-data .internal-view {
     display: flex;
     flex-direction: column;
@@ -434,7 +459,7 @@ body {
     z-index: 12;
     background-color: rgba(0, 0, 0, 0.705);
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     display: none;
     flex-direction: column;
     justify-content: center;
