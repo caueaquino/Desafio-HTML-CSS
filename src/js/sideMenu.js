@@ -21,9 +21,9 @@ let btContato = () => {
     ac().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     lic().style.zIndex="3";
     nc().style.display="none";
-    x=0;
+    xcf=0;
 
-    renderContacts(x);
+    renderContacts(xcf);
 }
 
 let btFavorito = () => {
@@ -32,9 +32,9 @@ let btFavorito = () => {
     af().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
     lif().style.zIndex="3";
     nf().style.display="none";
-    x=1;
+    xcf=1;
 
-    renderContacts(x);
+    renderContacts(xcf);
 }
 
 let resetbts = () => {

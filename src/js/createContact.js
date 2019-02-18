@@ -23,6 +23,7 @@ let btConfirmarCadastro = () => {
     contato.info.comments=icoment().value;
     contato.isFavorite=iis().checked;
     
+    
     contatos.push(contato);
 
     if(contato.isFavorite==true){

@@ -11,7 +11,7 @@ let contactView = (aux) => {
     es().value=contatos[aux].lastName;
     eem().value=contatos[aux].email;
     ecomp().value=contatos[aux].info.company;
-    ee().value=contatos[aux].info.adress;
+    ee().value=contatos[aux].info.address;
     et().value=contatos[aux].info.phone;
     ec().value=contatos[aux].info.comments;
 
@@ -58,21 +58,21 @@ let editContact = () => {
 }
 
 let deleteContact = () => {
-
+    alertDelete();
 }
 
 let favoriteContact = () => {
-
+    alertFavorite();
 }
 
 let btConfirmarPerfil = () =>{
+    confirmEdit();
     disableEdit();
     hideEdit();
 }
 
 let btCancelarPerfil = () => {
-    disableEdit();
-    hideEdit();
+    cancelEdit();
 }
 
 let btCloseView = () => {

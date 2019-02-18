@@ -8,9 +8,21 @@ let renderContacts = (opt) => {
     if(opt==0){
         h2t().innerText="Contatos";
         aux=contatos;
+
+        qtdPag=contatos.length/10;
+        
+        if(contatos.length%10!=0){
+            qtdPag+1;
+        }
     }else{
         h2t().innerText="Favoritos";
         aux=favoritos;
+
+        qtdPag=favoritos.length/10;
+
+        if(favoritos.length%10!=0){
+            qtdPag+1;
+        }
     }
 
 
@@ -21,7 +33,7 @@ let renderContacts = (opt) => {
                         '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
                     '</div>';
 
-        for(i=0;i<10 && i<aux.length;i++){
+        for(i=pag;i<pag+10;i++){
 
             let fav="";
 
@@ -44,6 +56,10 @@ let renderContacts = (opt) => {
 
             cf().appendChild(d);  
         }
+
+        pg().innerHTML='<div id="pags">'+
+                            ''+
+                        '</div>';
     }else{
 
         cf().innerHTML='<div id="contacts-field">'+

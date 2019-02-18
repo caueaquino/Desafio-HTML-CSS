@@ -39,6 +39,63 @@ body {
     font-family: "Montserrat",sans-serif;
 }
 
+/* Div alerts */
+
+#alerts {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.767);
+    z-index: 0;
+}
+
+#alerts #internal-alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#alerts h1 {
+    color: rgb(61, 61, 61);
+    font-size: 18pt;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.185);
+}
+
+#alerts button {
+    padding: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 12pt;
+    border: 1px solid rgba(0, 0, 0, 0.63);
+    border-radius: 10px;
+    background-color: rgba(0, 119, 255, 0.445);
+    transition: all 0.5s;
+    font-size: 18pt;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+    width: 60%;
+}
+
+#alerts button:hover {
+    background-color: rgba(0, 119, 255, 0.664);
+    -webkit-transform: scale(1.2);
+}
+
+#alerts button:focus {
+    outline-style: none;
+}
+
 /* Div da side bar com Menu */
 
 #container-side {
@@ -379,6 +436,21 @@ body {
 .contact-data button img {
     border: none;
     margin: 0px 0px 0px 10px;
+}
+
+/* Div paginação contatos */
+
+#pags {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#Pags button {
+    color: white;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(0, 26, 255);
 }
 
 /* Div do Cadastrar do Contato */
