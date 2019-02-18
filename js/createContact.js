@@ -29,6 +29,8 @@ let btConfirmarCadastro = () => {
         favoritos.push(contato);
     }
 
+    
+
     limpaTelaCadastro();
     btContato();
 }

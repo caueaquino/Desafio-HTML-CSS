@@ -36,7 +36,7 @@ let renderContacts = (opt) => {
                             '<label class="lcontact">Contato:</label>'+fav+'<label>'+aux[i].firstName+'&nbsp'+aux[i].lastName+'</label>'+
                                 
                             '<div class="internal-view">'+
-                                '<button onclick="contactView()">Visualizar'+
+                                '<button onclick="contactView('+i+')">Visualizar'+
                                     '<img src="./img/icon-view.png" alt="Icone-Visualizar" height="30px" width="30px">'+
                                 '</button>'+
                             '</div>'+

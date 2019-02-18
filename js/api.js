@@ -20,9 +20,32 @@ getContact().then(() => {
     btContato();
 });
 
-let removeContact = async (id) => {
-    const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts/'+id);
-    const data= await res.json();
+let createContact = async () => {
+    const res =  await POST('http://contacts-api.azurewebsites.net/api/contacts');
 
-    console.log(data);
+    if(res==200){
+        console.log('Contato cadastrado com sucesso!');
+    }else{
+        console.log('Erro ao cadastrar contato!')
+    }
+}
+
+let updateContact = async (id) => {
+    const res = await PUT('http://contacts-api.azurewebsites.net/api/contacts/'+id);
+
+    if(res==200){
+        console.log("Contato atualizado com sucesso!")
+    }else{
+        console.log("Erro ao atualizar contato!");
+    }
+}
+
+let removeContact = async (id) => {
+    const res = await DELETE('http://contacts-api.azurewebsites.net/api/contacts/'+id);
+
+    if(res==200){
+        console.log("Contato cadastrado com sucesso!")
+    }else{
+        console.log("Erro ao remover contato!");
+    }
 }

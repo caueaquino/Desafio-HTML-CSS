@@ -1,15 +1,26 @@
 // Javascript Document
 
 
-let contactView = () => {
-    ea().value="./img/user.png";
-    en().value="caue";
-    es().value="aquino nogueira";
-    eem().value="caue@forlogic.net";
-    ecomp().value="forlogic";
-    ee().value="rua avenida cidade";
-    et().value="11964984447";
-    ec().value="algum comentario";
+let contactView = (aux) => {
+    pcontact=aux;
+
+    contato=contatos[aux];
+
+    ea().value=contatos[aux].info.avatar;
+    en().value=contatos[aux].firstName;
+    es().value=contatos[aux].lastName;
+    eem().value=contatos[aux].email;
+    ecomp().value=contatos[aux].info.company;
+    ee().value=contatos[aux].info.adress;
+    et().value=contatos[aux].info.phone;
+    ec().value=contatos[aux].info.comments;
+
+    ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+
+    if(contatos[aux].isFavorite==true){
+        ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
+    }
+
     cvc().style.display="flex";
 }
 

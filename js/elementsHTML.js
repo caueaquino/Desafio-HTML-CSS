@@ -107,6 +107,10 @@ const iis = () => {
 
 // View and Edit Contact Area
 
+const ipf = () => {
+    return document.getElementById("ipf");
+}
+
 const ea = () => {
     return document.getElementById("eavatar");
 }
