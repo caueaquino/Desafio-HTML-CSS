@@ -1,49 +1,54 @@
 // Javascript Document
 
 
+import * as dtc from './dataContacts';
+import * as ith from './elementsHTML';
+import * as cta from './contactArea';
+
+
 let y=0;
 
-let btMenu = () => {
+ export let btMenu = () => {
     if(y==0){
-        cSide().style.display="flex";
-        btm().style.left="270px";
+        ith.cSide().style.display="flex";
+        ith.btm().style.left="270px";
         y=1;
     }else{
-        cSide().style.display="none";
-        btm().style.left="10px";
+        ith.cSide().style.display="none";
+        ith.btm().style.left="10px";
         y=0;
     }
 }
 
-let btContato = () => {
+export let btContato = () => {
     resetbts();
-    ac().style.backgroundColor="rgb(35, 68, 255)";
-    ac().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
-    lic().style.zIndex="3";
-    nc().style.display="none";
-    xcf=0;
+    ith.ac().style.backgroundColor="rgb(35, 68, 255)";
+    ith.ac().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
+    ith.lic().style.zIndex="3";
+    ith.nc().style.display="none";
+    dtc.setxcf(0);
 
-    renderContacts(xcf);
+    cta.renderContacts(dtc.xcf);
 }
 
-let btFavorito = () => {
+export let btFavorito = () => {
     resetbts();
-    af().style.backgroundColor="rgb(35, 68, 255)";
-    af().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
-    lif().style.zIndex="3";
-    nf().style.display="none";
-    xcf=1;
+    ith.af().style.backgroundColor="rgb(35, 68, 255)";
+    ith.af().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
+    ith.lif().style.zIndex="3";
+    ith.nf().style.display="none";
+    dtc.setxcf(1);
 
-    renderContacts(xcf);
+    cta.renderContacts(dtc.xcf);
 }
 
 let resetbts = () => {
-    ac().style.backgroundColor="rgba(10, 10, 10, 0)";
-    ac().style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
-    lic().style.zIndex="2";
-    af().style.backgroundColor="rgba(10, 10, 10, 0)";
-    af().style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
-    lif().style.zIndex="2";
-    nc().style.display="none";
-    nf().style.display="none";
+    ith.ac().style.backgroundColor="rgba(10, 10, 10, 0)";
+    ith.ac().style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
+    ith.lic().style.zIndex="2";
+    ith.af().style.backgroundColor="rgba(10, 10, 10, 0)";
+    ith.af().style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
+    ith.lif().style.zIndex="2";
+    ith.nc().style.display="none";
+    ith.nf().style.display="none";
 }

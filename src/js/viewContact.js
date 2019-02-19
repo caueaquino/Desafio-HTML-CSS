@@ -1,115 +1,120 @@
 // Javascript Document
 
 
-let contactView = (aux) => {
-    pcontact=aux;
+import * as ith from './elementsHTML';
+import * as ad from './alertsDiv';
+import * as dtc from './dataContacts';
 
-    contato=contatos[aux];
 
-    ea().value=contatos[aux].info.avatar;
-    en().value=contatos[aux].firstName;
-    es().value=contatos[aux].lastName;
-    eem().value=contatos[aux].email;
-    ecomp().value=contatos[aux].info.company;
-    ee().value=contatos[aux].info.address;
-    et().value=contatos[aux].info.phone;
-    ec().value=contatos[aux].info.comments;
+export let contactView = (aux) => {
+    dtc.setPContact(aux);
 
-    ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+    dtc.setContato(dtc.contatos[aux]);
 
-    if(contatos[aux].isFavorite==true){
-        ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
+    ith.ea().value=dtc.contatos[aux].info.avatar;
+    ith.en().value=dtc.contatos[aux].firstName;
+    ith.es().value=dtc.contatos[aux].lastName;
+    ith.eem().value=dtc.contatos[aux].email;
+    ith.ecomp().value=dtc.contatos[aux].info.company;
+    ith.ee().value=dtc.contatos[aux].info.address;
+    ith.et().value=dtc.contatos[aux].info.phone;
+    ith.ec().value=dtc.contatos[aux].info.comments;
+
+    ith.ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+
+    if(dtc.contatos[aux].isFavorite==true){
+        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
     }
 
-    cvc().style.display="flex";
+    ith.cvc().style.display="flex";
 }
 
-let editContact = () => {
-    ea().disabled=false;
-    en().disabled=false;
-    es().disabled=false;
-    eem().disabled=false;
-    ecomp().disabled=false;
-    ee().disabled=false;
-    et().disabled=false;
-    ec().disabled=false;
+export let editContact = () => {
+    ith.ea().disabled=false;
+    ith.en().disabled=false;
+    ith.es().disabled=false;
+    ith.eem().disabled=false;
+    ith.ecomp().disabled=false;
+    ith.ee().disabled=false;
+    ith.et().disabled=false;
+    ith.ec().disabled=false;
 
-    ea().style.backgroundColor="white";
-    en().style.backgroundColor="white";
-    es().style.backgroundColor="white";
-    eem().style.backgroundColor="white";
-    ecomp().style.backgroundColor="white";
-    ee().style.backgroundColor="white";
-    et().style.backgroundColor="white";
-    ec().style.backgroundColor="white";
+    ith.ea().style.backgroundColor="white";
+    ith.en().style.backgroundColor="white";
+    ith.es().style.backgroundColor="white";
+    ith.eem().style.backgroundColor="white";
+    ith.ecomp().style.backgroundColor="white";
+    ith.ee().style.backgroundColor="white";
+    ith.et().style.backgroundColor="white";
+    ith.ec().style.backgroundColor="white";
 
-    ea().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    en().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    es().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    eem().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    ecomp().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    ee().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    et().style.border="1px solid rgba(0, 0, 0, 0.63)";
-    ec().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.ea().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.en().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.es().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.eem().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.ecomp().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.ee().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.et().style.border="1px solid rgba(0, 0, 0, 0.63)";
+    ith.ec().style.border="1px solid rgba(0, 0, 0, 0.63)";
 
-    btes().style.display="none";
-    btec().style.display="block";
-    btecanc().style.display="block";
+    ith.btes().style.display="none";
+    ith.btec().style.display="block";
+    ith.btecanc().style.display="block";
 }
 
-let deleteContact = () => {
-    alertDelete();
+export let deleteContact = () => {
+    ad.alertDelete();
 }
 
-let favoriteContact = () => {
-    alertFavorite();
+export let favoriteContact = () => {
+    ad.alertFavorite();
 }
 
-let btConfirmarPerfil = () =>{
-    confirmEdit();
+export let btConfirmarPerfil = () =>{
+    ad.confirmEdit();
     disableEdit();
     hideEdit();
 }
 
-let btCancelarPerfil = () => {
-    cancelEdit();
+export let btCancelarPerfil = () => {
+    ad.cancelEdit();
 }
 
-let btCloseView = () => {
-    cvc().style.display="none";
+export let btCloseView = () => {
+    ith.cvc().style.display="none";
 }
 
-let disableEdit = () => {
-    ea().disabled=true;
-    en().disabled=true;
-    es().disabled=true;
-    eem().disabled=true;
-    ecomp().disabled=true;
-    ee().disabled=true;
-    et().disabled=true;
-    ec().disabled=true;
+export let disableEdit = () => {
+    ith.ea().disabled=true;
+    ith.en().disabled=true;
+    ith.es().disabled=true;
+    ith.eem().disabled=true;
+    ith.ecomp().disabled=true;
+    ith.ee().disabled=true;
+    ith.et().disabled=true;
+    ith.ec().disabled=true;
 }
 
-let hideEdit = () =>{
-    btec().style.display="none";
-    btecanc().style.display="none";
-    btes().style.display="block";
+export let hideEdit = () =>{
+    ith.btec().style.display="none";
+    ith.btecanc().style.display="none";
+    ith.btes().style.display="block";
 
-    ea().style.backgroundColor="rgba(240, 248, 255, 0)";  
-    en().style.backgroundColor="rgba(240, 248, 255, 0)";
-    es().style.backgroundColor="rgba(240, 248, 255, 0)";
-    eem().style.backgroundColor="rgba(240, 248, 255, 0)";
-    ecomp().style.backgroundColor="rgba(240, 248, 255, 0)";
-    ee().style.backgroundColor="rgba(240, 248, 255, 0)";
-    et().style.backgroundColor="rgba(240, 248, 255, 0)";
-    ec().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.ea().style.backgroundColor="rgba(240, 248, 255, 0)";  
+    ith.en().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.es().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.eem().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.ecomp().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.ee().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.et().style.backgroundColor="rgba(240, 248, 255, 0)";
+    ith.ec().style.backgroundColor="rgba(240, 248, 255, 0)";
 
-    ea().style.border="none";
-    en().style.border="none";
-    es().style.border="none";
-    eem().style.border="none";
-    ecomp().style.border="none";
-    ee().style.border="none";
-    et().style.border="none";
-    ec().style.border="none";
+    ith.ea().style.border="none";
+    ith.en().style.border="none";
+    ith.es().style.border="none";
+    ith.eem().style.border="none";
+    ith.ecomp().style.border="none";
+    ith.ee().style.border="none";
+    ith.et().style.border="none";
+    ith.ec().style.border="none";
 }

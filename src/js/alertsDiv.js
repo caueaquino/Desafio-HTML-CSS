@@ -1,122 +1,123 @@
 // Javascript Document
 
-let confirmEdit = () => {
-    contato.avatar=ea().value;
-    contato.firstName=en().value;
-    contato.lastName=es().value;
-    contato.email=eem().value;
-    contato.info.company=ecomp().value;
-    contato.info.address=ee().value;
-    contato.info.phone=et().value;
-    contato.info.comments=ec().value;
+
+import * as ith from './elementsHTML';
+import * as dtc from './dataContacts';
+import * as app from './api';
+import * as vc from './viewContact';
+import * as ca from './contactArea';
+
+
+export let confirmEdit = () => {
+    dtc.constContato(ith.en().value, ith.es().value, ith.eem().value, dtc.contato.gender, ith.ea().value, ith.ecomp().value, ith.ee().value, ith.et().value, ith.ec().value, dtc.contato.isFavorite, dtc.contato.id);
 }
 
-let cancelEdit = () => {
-    ialert().innerHTML='<div id="internal-alert">'+
+export let cancelEdit = () => {
+    ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Ao cancelar os dados serão perdidos, deseja prosseguir?</h1>'+
-                            '<button onclick="yesCancelEdit()">Sim</button>'+
-                            '<button onclick="noCancelEdit()">Não</button>'+
+                            '<button id="yesEdit">Sim</button>'+
+                            '<button id="noEdit">Não</button>'+
                         '</div>';
 
-    ealerts().style.display="flex";
-    ealerts().style.zIndex="15";
+    ith.ealerts().style.display="flex";
+    ith.ealerts().style.zIndex="15";
 }
 
-let yesCancelEdit = () => {
-    ea().value=contato.avatar;
-    en().value=contato.firstName;
-    es().value=contato.lastName;
-    eem().value=contato.email;
-    ecomp().value=contato.info.company;
-    ee().value=contato.info.address;
-    et().value=contato.info.phone;
-    ec().value=contato.info.comments;
+export let yesCancelEdit = () => {
+    ith.ea().value=dtc.contato.avatar;
+    ith.en().value=dtc.contato.firstName;
+    ith.es().value=dtc.contato.lastName;
+    ith.eem().value=dtc.contato.email;
+    ith.ecomp().value=dtc.contato.info.company;
+    ith.ee().value=dtc.contato.info.address;
+    ith.et().value=dtc.contato.info.phone;
+    ith.ec().value=dtc.contato.info.comments;
 
     closeAlert();
-    disableEdit();
-    hideEdit();
+    vc.disableEdit();
+    vc.hideEdit();
 }
 
-let noCancelEdit = () => {
+export let noCancelEdit = () => {
     closeAlert();
 }
 
-let alertClose = () => {
-    ialert().innerHTML='<div id="internal-alert">'+
+export let alertClose = () => {
+    ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja salvar as mudanças?</h1>'+
-                            '<button onclick="saveChanges()">Sim</button>'+
-                            '<button onclick="closeAlert(), btCloseView()">Não</button>'+
+                            '<button id="closeEditYes">Sim</button>'+
+                            '<button id="closeEditNo">Não</button>'+
                         '</div>';
 
-    ealerts().style.display="flex";
-    ealerts().style.zIndex="15";
+    ith.ealerts().style.display="flex";
+    ith.ealerts().style.zIndex="15";
 }
 
-let saveChanges = () => {
+export let saveChanges = () => {
     
     confirmEdit();
 
-    updateContact(contato.id);
+    app.updateContact(dtc.contato.id);
 
-    contatos[pcontact]=contato;
+    dtc.changeContato(dtc.contato, dtc.pcontact);
 
-    if(changeFavorite==1){
+    if(dtc.changeFavorite==1){
         
-        for(i=0;i<favoritos.length;i++){
+        for(let i=0;i<dtc.favoritos.length;i++){
            
-            if(contato.id==favoritos[i].id){
-                favoritos.splice(i, 1);
+            if(dtc.contato.id==dtc.favoritos[i].id){
+                dtc.removeFavorites(i);
             }
         }
 
-    }else if(changeFavorite==2){
+    }else if(dtc.changeFavorite==2){
         
-        for(i=0;i<favoritos.length;i++){
+        for(let i=0;i<dtc.favoritos.length;i++){
             
-            if(contato.id==favoritos[i].id){
-                favoritos.push(contato);
+            if(dtc.contato.id==dtc.favoritos[i].id){
+                dtc.pushFavoritos(dtc.contato);
             }
         }        
     
     }else{
-        for(i=0;i<favoritos.length;i++){
+        for(let i=0;i<dtc.favoritos.length;i++){
             
-            if(contato.id==favoritos[i].id){
-                favoritos[i]=contato;
+            if(dtc.contato.id==dtc.favoritos[i].id){
+                dtc.changeFavorites(dtc.contato, i);
             }
         }    
     }
 
-    changeFavorite=0;
+    dtc.setChangeFavorite(0);
     closeAlert();
-    btCloseView();
-    renderContacts(xcf);
+    vc.btCloseView();
+    ca.renderContacts(dtc.xcf);
 }
 
-let alertDelete = () => {
-    ialert().innerHTML='<div id="internal-alert">'+
+export let alertDelete = () => {
+    ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja realmente deletar esta Contato?</h1>'+
-                            '<button onclick="contactDelete()">Sim</button>'+
-                            '<button onclick="closeAlert()">Não</button>'+
+                            '<button id="yesDel">Sim</button>'+
+                            '<button id="noDel">Não</button>'+
                         '</div>';
 
-    ealerts().style.display="flex";
-    ealerts().style.zIndex="15";
+    ith.ealerts().style.display="flex";
+    ith.ealerts().style.zIndex="15";
 }
 
-let contactDelete = () => {
+export let contactDelete = () => {
     
-    if(removeContact(contato.id)){
+    if(app.removeContact(dtc.contato.id)){
 
-        contatos.splice(pcontact, 1);
+        dtc.removeContato(dtc.pcontact);
 
-        if(contato.isFavorite==true){
+        if(dtc.contato.isFavorite==true){
 
-            for(i=0; i<favoritos.length;i++){
+            for(let i=0; i<dtc.favoritos.length;i++){
 
-                if(contato.id==favoritos[i].id){
+                if(dtc.contato.id==dtc.favoritos[i].id){
                     
-                    favoritos.splice(i, 1);
+                    dtc.removeFavorite(i);
                     break;
                 }
             }
@@ -124,38 +125,38 @@ let contactDelete = () => {
     }
 
     closeAlert();
-    btCloseView();
-    renderContacts(xcf);
+    vc.btCloseView();
+    ca.renderContacts(dtc.xcf);
 }
 
 let alertFavorite = () => {
-    ialert().innerHTML='<div id="internal-alert">'+
+    ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja realmente favoritar esta Contato?</h1>'+
                             '<button onclick="contactFavorite()">Sim</button>'+
                             '<button onclick="closeAlert()">Não</button>'+
                         '</div>';
 
-    ealerts().style.display="flex";
-    ealerts().style.zIndex="15";
+    ith.ealerts().style.display="flex";
+    ith.ealerts().style.zIndex="15";
 }
 
 let contactFavorite = () => {
-    if(contato.isFavorite==true){
-        changeFavorite=1;
-        contato.isFavorite=false;
-        ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+    if(dtc.contato.isFavorite==true){
+        dtc.setChangeFavorite(1);
+        dtc.setFavoriteContact(false);
+        ith.ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
     
     }else{
-        changeFavorite=2;
-        contato.isFavorite=true;
-        ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
+        dtc.setChangeFavorite(2);
+        dtc.setFavoriteContact(true);
+        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
         
     }
     closeAlert();
 }
 
 
-let closeAlert = () => {
-    ealerts().style.display="none";
-    ealerts().style.zIndex="0";
+export let closeAlert = () => {
+    ith.ealerts().style.display="none";
+    ith.ealerts().style.zIndex="0";
 }

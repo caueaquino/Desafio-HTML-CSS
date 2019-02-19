@@ -1,56 +1,53 @@
 // Javascript Document
 
 
-let cadastrarContato = () => {
-    cc().style.display="flex";
+import * as ith from './elementsHTML';
+import * as dtc from './dataContacts';
+import * as sm from './sideMenu';
+
+
+export let cadastrarContato = () => {
+    ith.cc().style.display="flex";
 }
 
-let btConfirmarCadastro = () => {
-    contato.firstName=ino().value;
-    contato.lastName=is().value;
-    contato.email=ie().value;
-    if(im().checked==true){
-        contato.gender="m";
-    }else if(ife().checked==true){
-        contato.gender="f";
+export let btConfirmarCadastro = () => {
+    let auxg;
+
+    if(ith.im().checked==true){
+        auxg="m";
+    }else if(ith.ife().checked==true){
+        auxg="f";
     }else{
-        contato.gender="";
-    }
-    contato.info.avatar=ia().value;
-    contato.info.company=ic().value;
-    contato.info.adress=iend().value;
-    contato.info.phone=it().value;
-    contato.info.comments=icoment().value;
-    contato.isFavorite=iis().checked;
-    
-    
-    contatos.push(contato);
-
-    if(contato.isFavorite==true){
-        favoritos.push(contato);
+        auxg="";
     }
 
-    
+    dtc.constContato(ith.ino().value, ith.is().value, ith.ie().value, auxg, ith.ia().value, ith.ic().value, ith.iend().value, ith.it().value, ith.icoment().value, ith.iis().checked, "");
+
+    dtc.pushContatos(dtc.contato);
+
+    if(dtc.contato.isFavorite==true){
+        dtc.pushFavoritos(dtc.contato);
+    }
 
     limpaTelaCadastro();
-    btContato();
+    sm.btContato();
 }
 
-let btCancelarCadastro = () => {
+ export let btCancelarCadastro = () => {
     limpaTelaCadastro();
 }
 
 let limpaTelaCadastro = () => {
-    ino().value="";
-    is().value="";
-    ie().value="";
-    im().checked=false;
-    ife().checked=false;
-    ia().value="";
-    ic().value="";
-    iend().value="";
-    it().value="";
-    icoment().value="";
-    iis().checked=false;
-    cc().style.display="none";
+    ith.ino().value="";
+    ith.is().value="";
+    ith.ie().value="";
+    ith.im().checked=false;
+    ith.ife().checked=false;
+    ith.ia().value="";
+    ith.ic().value="";
+    ith.iend().value="";
+    ith.it().value="";
+    ith.icoment().value="";
+    ith.iis().checked=false;
+    ith.cc().style.display="none";
 }

@@ -443,7 +443,9 @@ body {
 #pags {
     display: flex;
     flex-direction: row;
-
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
 }
 
 #Pags button {

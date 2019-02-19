@@ -1,30 +1,23 @@
 // Javascript Document
 
 
-import {data} from './dataContacts';
-import {itenshtml} from './elementsHTML';
+import * as dtc from './dataContacts';  
 
-const getContact = async () => {
+export const getContact = async () => {
 
     const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts');
     const data = await res.json();
 
-    data.contatos=data;
+    dtc.setContatos(data);
     
-    for(let i=0;i<contatos.length;i++){
-        if(contatos[i].isFavorite==true){
-            favoritos.push(contatos[i]);
+    for(let i=0;i<dtc.contatos.length;i++){
+        if(dtc.contatos[i].isFavorite==true){
+            dtc.favoritos.push(dtc.contatos[i]);
         }
     }
 }
 
-getContact().then(() => {
-    itenshtml.cl().style.display="none";
-    itenshtml.cl().style.zIndex="0";
-    btContato();
-});
-
-let createContact = async () => {
+export let createContact = async () => {
     
     try{
         const res =  await fetch('http://contacts-api.azurewebsites.net/api/contacts',
@@ -44,7 +37,7 @@ let createContact = async () => {
     }
 }
 
-let updateContact = async (id) => {
+export let updateContact = async (id) => {
     
     try{
         const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts/'+id,
@@ -64,7 +57,7 @@ let updateContact = async (id) => {
     }
 }
 
-let removeContact = async (id) => {
+export let removeContact = async (id) => {
 
     try{
         const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts/'+id,

@@ -1,39 +1,43 @@
 // Javascript Document
 
 
-let renderContacts = (opt) => {
+import * as ith from './elementsHTML';
+import * as dtc from './dataContacts';
+
+
+export let renderContacts = (opt) => {
 
     let aux;
 
     if(opt==0){
-        h2t().innerText="Contatos";
-        aux=contatos;
+        ith.h2t().innerText="Contatos";
+        aux=dtc.contatos;
 
-        qtdPag=contatos.length/10;
+        dtc.setQtdPag(dtc.contatos.length/10);
         
-        if(contatos.length%10!=0){
-            qtdPag+1;
+        if(dtc.contatos.length%10!=0){
+            dtc.setQtdPag(dtc.qtdPag+1);
         }
     }else{
-        h2t().innerText="Favoritos";
-        aux=favoritos;
+        ith.h2t().innerText="Favoritos";
+        aux=dtc.favoritos;
 
-        qtdPag=favoritos.length/10;
+        dtc.setQtdPag(dtc.favoritos.length/10);
 
-        if(favoritos.length%10!=0){
-            qtdPag+1;
+        if(dtc.favoritos.length%10!=0){
+            dtc.setQtdPag(dtc.qtdPag+1);
         }
     }
 
 
     if(aux.length>0){
 
-        cf().innerHTML='<div id="contacts-field">'+
+        ith.cf().innerHTML='<div id="contacts-field">'+
                         '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
                         '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
                     '</div>';
 
-        for(i=pag;i<pag+10;i++){
+        for(let i=dtc.pag;i<dtc.pag+10;i++){
 
             let fav="";
 
@@ -48,29 +52,29 @@ let renderContacts = (opt) => {
                             '<label class="lcontact">Contato:</label>'+fav+'<label>'+aux[i].firstName+'&nbsp'+aux[i].lastName+'</label>'+
                                 
                             '<div class="internal-view">'+
-                                '<button onclick="contactView('+i+')">Visualizar'+
+                                '<button class="btperfil" value="'+i+'">Visualizar'+
                                     '<img src="./img/icon-view.png" alt="Icone-Visualizar" height="30px" width="30px">'+
                                 '</button>'+
                             '</div>'+
                         '</div>';
 
-            cf().appendChild(d);  
+                        ith.cf().appendChild(d);  
         }
 
-        pg().innerHTML='<div id="pags">'+
+        ith.pg().innerHTML='<div id="pags">'+
                             ''+
                         '</div>';
     }else{
 
-        cf().innerHTML='<div id="contacts-field">'+
+        ith.cf().innerHTML='<div id="contacts-field">'+
                             '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
                             '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
                         '</div>';
 
         if(opt==0){
-            nc().style.display="block";
+            ith.nc().style.display="block";
         }else{
-            nf().style.display="block";
+            ith.nf().style.display="block";
         }
     }
 }

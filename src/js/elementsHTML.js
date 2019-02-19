@@ -1,176 +1,215 @@
 // Javascript Document
 
 
-export class itenshtml{
-    // Div Area Carregamento
+// Div Area Carregamento
 
-    cl(){
-        return document.getElementById("container-loading");
-    }
+export const cl = () => {
+    return document.getElementById("container-loading");
+}
 
-    // Div Alertas
+// Div Alertas
 
-    ealerts(){
-        return document.getElementById("alerts");
-    }
+export const ealerts = () => {
+    return document.getElementById("alerts");
+}
 
-    ialert(){
-        return document.getElementById("internal-alert");
-    }
+export const ialert = () => {
+    return document.getElementById("internal-alert");
+}
 
-    // Side Menu Area
+// Botoes Div Alert close perfil
 
-    cSide(){
-        return document.getElementById("container-side");
-    }
+export const cey = () => {
+    return document.getElementById("closeEditYes");
+}
 
-    btm(){
-        return document.getElementById("btmenu");
-    }
+export const cen = () => {
+    return document.getElementById("closeEditNo");
+}
 
-    ac(){
-        return document.getElementById("acontatos");
-    }
+// Botoes cancela e confirma ediçao
 
-    af(){
-        return document.getElementById('afavoritos');
-    }
+export const yce = () => {
+    return document.getElementById("yesEdit");
+}
 
-    lic(){
-        return document.getElementById("licontatos");
-    }
+export const nce = () => {
+    return document.getElementById("noEdit");
+}
 
-    lif(){
-        return document.getElementById('lifavoritos');
-    }
+// Botões confima e cancela exclusao
+
+export const yd = () => {
+    return document.getElementById("yesDel");
+}
+
+export const nd = () => {
+    return document.getElementById("noDel");
+}
+
+// Side Menu Area
+
+export const cSide = () => {
+    return document.getElementById("container-side");
+}
+
+export const btm = () => {
+    return document.getElementById("btmenu");
+}
+
+export const ac = () => {
+    return document.getElementById("acontatos");
+}
+
+export const af = () => {
+    return document.getElementById('afavoritos');
+}
+
+export const lic = () => {
+    return document.getElementById("licontatos");
+}
+
+export const lif = () => {
+    return document.getElementById('lifavoritos');
+}
 
 
-    // Contact Area
+// Contact Area
 
-    h2t(){
-        return document.getElementById("h2-type");
-    }
+export const h2t = () => {
+    return document.getElementById("h2-type");
+}
 
-    cf(){
-        return document.getElementById("contacts-field");
-    }
+export const cf = () => {
+    return document.getElementById("contacts-field");
+}
 
-    nc(){
-        return document.getElementById("not-contacts");
-    }
+export const nc = () => {
+    return document.getElementById("not-contacts");
+}
 
-    nf(){
-        return document.getElementById("not-favorits");
-    }
+export const nf = () => {
+    return document.getElementById("not-favorits");
+}
 
+export const btp = () => {
+    return document.getElementsByClassName("btperfil");
+}
 
-    // Create Contact Area
+// Create Contact Area
 
-    cc(){
-        return document.getElementById("container-cadastrar");
-    }
+export const cc = () => {
+    return document.getElementById("container-cadastrar");
+}
 
-    ino(){
-        return document.getElementById("inome");
-    }
+export const ino = () => {
+    return document.getElementById("inome");
+}
 
-    is(){
-        return document.getElementById("isobrenome");
-    }
+export const is = () => {
+    return document.getElementById("isobrenome");
+}
 
-    ie(){
-        return document.getElementById('iemail');
-    }
+export const ie = () => {
+    return document.getElementById('iemail');
+}
 
-    im(){
-        return document.getElementById("imasculino");
-    }
+export const im = () => {
+    return document.getElementById("imasculino");
+}
 
-    ife = ( ) => {
-        return document.getElementById("ifeminino");
-    }
+export const ife = ( ) => {
+    return document.getElementById("ifeminino");
+}
 
-    ia(){
-        return document.getElementById("iavatar");
-    }
+export const ia = () => {
+    return document.getElementById("iavatar");
+}
 
-    ic(){
-        return document.getElementById("icompanhia");
-    }
+export const ic = () => {
+    return document.getElementById("icompanhia");
+}
 
-    iend(){
-        return document.getElementById("iendereco");
-    }
+export const iend = () => {
+    return document.getElementById("iendereco");
+}
 
-    it(){
-        return document.getElementById("itelefone");
-    }
+export const it = () => {
+    return document.getElementById("itelefone");
+}
 
-    icoment(){
-        return document.getElementById('icomentario');
-    }
+export const icoment = () => {
+    return document.getElementById('icomentario');
+}
 
-    iis(){
-        return document.getElementById("iisfavorite");
-    }
+export const iis = () => {
+    return document.getElementById("iisfavorite");
+}
 
-    // Area Paginação
+export const confc = () => {
+    return document.getElementById("confirmCad");
+}
 
-    pg(){
-        return document.getElementById("pags");
-    }
+export const cancc = () => {
+    return document.getElementById("cancelCad");
+}
 
-    // View and Edit Contact Area
+// Area Paginação
 
-    ipf(){
-        return document.getElementById("ipf");
-    }
+export const pg = () => {
+    return document.getElementById("pags");
+}
 
-    ea(){
-        return document.getElementById("eavatar");
-    }
+// View and Edit Contact Area
 
-    en(){
-        return document.getElementById("enome");
-    }
+export const ipf = () => {
+    return document.getElementById("ipf");
+}
 
-    es(){
-        return document.getElementById("esobrenome");
-    }
+export const ea = () => {
+    return document.getElementById("eavatar");
+}
 
-    eem(){
-        return document.getElementById("eemail");
-    }
+export const en = () => {
+    return document.getElementById("enome");
+}
 
-    ecomp(){
-        return document.getElementById("ecompanhia");
-    }
+export const es = () => {
+    return document.getElementById("esobrenome");
+}
 
-    ee(){
-        return document.getElementById("eendereco");
-    }
+export const eem = () => {
+    return document.getElementById("eemail");
+}
 
-    et(){
-        return document.getElementById("etelefone");
-    }
+export const ecomp = () => {
+    return document.getElementById("ecompanhia");
+}
 
-    ec(){
-        return document.getElementById("ecomentario");
-    }
+export const ee = () => {
+    return document.getElementById("eendereco");
+}
 
-    cvc(){
-        return document.getElementById("container-vcont");
-    }
+export const et = () => {
+    return document.getElementById("etelefone");
+}
 
-    btes(){
-        return document.getElementById("btEditSair");
-    }
+export const ec = () => {
+    return document.getElementById("ecomentario");
+}
 
-    btec(){
-        return document.getElementById("btEditConf");
-    }
+export const cvc = () => {
+    return document.getElementById("container-vcont");
+}
 
-    btecanc(){
-        return document.getElementById("btEditCanc");
-    }
+export const btes = () => {
+    return document.getElementById("btEditSair");
+}
+
+export const btec = () => {
+    return document.getElementById("btEditConf");
+}
+
+export const btecanc = () => {
+    return document.getElementById("btEditCanc");
 }
