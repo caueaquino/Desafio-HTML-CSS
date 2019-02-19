@@ -5,6 +5,7 @@ import * as ith from './elementsHTML';
 import * as ad from './alertsDiv';
 import * as dtc from './dataContacts';
 
+var favicon=require('../img/favorit-icon.png');
 
 export let contactView = (aux) => {
     dtc.setPContact(aux);
@@ -23,10 +24,14 @@ export let contactView = (aux) => {
     ith.ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
 
     if(dtc.contatos[aux].isFavorite==true){
-        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
+        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
     }
 
     ith.cvc().style.display="flex";
+
+    window.location="#";
+    document.documentElement.style.overflow = 'hidden';
+    document.body.scroll = "no";
 }
 
 export let editContact = () => {
@@ -82,6 +87,8 @@ export let btCancelarPerfil = () => {
 
 export let btCloseView = () => {
     ith.cvc().style.display="none";
+    document.documentElement.style.overflow = 'auto';
+    document.body.scroll = "yes";
 }
 
 export let disableEdit = () => {

@@ -47,6 +47,16 @@ export const nd = () => {
     return document.getElementById("noDel");
 }
 
+// Botões confirmar e cancelar favoritar contato
+
+export const bfs = () => {
+    return document.getElementById("btfs");
+}
+
+export const bfn = () => {
+    return document.getElementById("btfn");
+}
+
 // Side Menu Area
 
 export const cSide = () => {
@@ -92,11 +102,11 @@ export const nf = () => {
     return document.getElementById("not-favorits");
 }
 
-export const btp = () => {
-    return document.getElementsByClassName("btperfil");
-}
-
 // Create Contact Area
+
+export const cadc = () => {
+    return document.getElementById("cadcontatos");
+}
 
 export const cc = () => {
     return document.getElementById("container-cadastrar");
@@ -161,6 +171,18 @@ export const pg = () => {
 }
 
 // View and Edit Contact Area
+
+export const edc = () => {
+    return document.getElementById("edit-contact");
+}
+
+export const delc = () => {
+    return document.getElementById("delete-contact");
+}
+
+export const favc = () => {
+    return document.getElementById("favorite-contact");
+}
 
 export const ipf = () => {
     return document.getElementById("ipf");

@@ -4,10 +4,14 @@
 import * as ith from './elementsHTML';
 import * as dtc from './dataContacts';
 import * as sm from './sideMenu';
+import { createContact } from './api';
 
 
 export let cadastrarContato = () => {
     ith.cc().style.display="flex";
+    window.location="#";
+    document.documentElement.style.overflow = 'hidden';
+    document.body.scroll = "no";
 }
 
 export let btConfirmarCadastro = () => {
@@ -23,18 +27,25 @@ export let btConfirmarCadastro = () => {
 
     dtc.constContato(ith.ino().value, ith.is().value, ith.ie().value, auxg, ith.ia().value, ith.ic().value, ith.iend().value, ith.it().value, ith.icoment().value, ith.iis().checked, "");
 
-    dtc.pushContatos(dtc.contato);
+    if(createContact()){
 
-    if(dtc.contato.isFavorite==true){
-        dtc.pushFavoritos(dtc.contato);
+        dtc.pushContatos(dtc.contato);
+
+        if(dtc.contato.isFavorite==true){
+            dtc.pushFavoritos(dtc.contato);
+        }
     }
-
+    
     limpaTelaCadastro();
+    document.documentElement.style.overflow = 'auto';
+    document.body.scroll = "yes";
     sm.btContato();
 }
 
  export let btCancelarCadastro = () => {
     limpaTelaCadastro();
+    document.documentElement.style.overflow = 'auto';
+    document.body.scroll = "yes";
 }
 
 let limpaTelaCadastro = () => {

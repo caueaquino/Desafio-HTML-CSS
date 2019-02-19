@@ -8,6 +8,9 @@ import * as vc from './viewContact';
 import * as ca from './contactArea';
 
 
+var favicon = require('../img/favorit-icon.png');
+
+
 export let confirmEdit = () => {
     dtc.constContato(ith.en().value, ith.es().value, ith.eem().value, dtc.contato.gender, ith.ea().value, ith.ecomp().value, ith.ee().value, ith.et().value, ith.ec().value, dtc.contato.isFavorite, dtc.contato.id);
 }
@@ -21,6 +24,14 @@ export let cancelEdit = () => {
 
     ith.ealerts().style.display="flex";
     ith.ealerts().style.zIndex="15";
+
+    ith.yce().onclick = () => {
+        yesCancelEdit();
+    }
+    
+    ith.nce().onclick = () => {
+        noCancelEdit();
+    }
 }
 
 export let yesCancelEdit = () => {
@@ -51,43 +62,53 @@ export let alertClose = () => {
 
     ith.ealerts().style.display="flex";
     ith.ealerts().style.zIndex="15";
+
+    ith.cey().onclick = () => {
+        saveChanges();
+    }
+
+    ith.cen().onclick = () => {
+        closeAlert();
+        vc.btCloseView();
+    }
 }
 
 export let saveChanges = () => {
     
     confirmEdit();
 
-    app.updateContact(dtc.contato.id);
+    if(app.updateContact(dtc.contato.id)){
 
-    dtc.changeContato(dtc.contato, dtc.pcontact);
+        dtc.changeContato(dtc.contato, dtc.pcontact);
 
-    if(dtc.changeFavorite==1){
-        
-        for(let i=0;i<dtc.favoritos.length;i++){
-           
-            if(dtc.contato.id==dtc.favoritos[i].id){
-                dtc.removeFavorites(i);
+        if(dtc.changeFavorite==1){
+            
+            for(let i=0;i<dtc.favoritos.length;i++){
+            
+                if(dtc.contato.id==dtc.favoritos[i].id){
+                    dtc.removeFavorite(i);
+                }
             }
+
+        }else if(dtc.changeFavorite==2){
+            
+            for(let i=0;i<dtc.favoritos.length;i++){
+                
+                if(dtc.contato.id==dtc.favoritos[i].id){
+                    dtc.pushFavoritos(dtc.contato);
+                }
+            }        
+        
+        }else{
+            for(let i=0;i<dtc.favoritos.length;i++){
+                
+                if(dtc.contato.id==dtc.favoritos[i].id){
+                    dtc.changeFavorites(dtc.contato, i);
+                }
+            }    
         }
-
-    }else if(dtc.changeFavorite==2){
-        
-        for(let i=0;i<dtc.favoritos.length;i++){
-            
-            if(dtc.contato.id==dtc.favoritos[i].id){
-                dtc.pushFavoritos(dtc.contato);
-            }
-        }        
-    
-    }else{
-        for(let i=0;i<dtc.favoritos.length;i++){
-            
-            if(dtc.contato.id==dtc.favoritos[i].id){
-                dtc.changeFavorites(dtc.contato, i);
-            }
-        }    
     }
-
+    
     dtc.setChangeFavorite(0);
     closeAlert();
     vc.btCloseView();
@@ -103,6 +124,14 @@ export let alertDelete = () => {
 
     ith.ealerts().style.display="flex";
     ith.ealerts().style.zIndex="15";
+
+    ith.yd().onclick = () => {
+        contactDelete();
+    }
+    
+    ith.nd().onclick = () =>{
+        closeAlert();
+    }
 }
 
 export let contactDelete = () => {
@@ -129,18 +158,26 @@ export let contactDelete = () => {
     ca.renderContacts(dtc.xcf);
 }
 
-let alertFavorite = () => {
+export let alertFavorite = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja realmente favoritar esta Contato?</h1>'+
-                            '<button onclick="contactFavorite()">Sim</button>'+
-                            '<button onclick="closeAlert()">Não</button>'+
+                            '<button id="btfs">Sim</button>'+
+                            '<button id="btfn">Não</button>'+
                         '</div>';
 
     ith.ealerts().style.display="flex";
     ith.ealerts().style.zIndex="15";
+
+    ith.bfs().onclick = () => {
+        contactFavorite();
+    }
+    
+    ith.bfn().onclick = () => {
+        closeAlert();
+    }
 }
 
-let contactFavorite = () => {
+export let contactFavorite = () => {
     if(dtc.contato.isFavorite==true){
         dtc.setChangeFavorite(1);
         dtc.setFavoriteContact(false);
@@ -149,7 +186,7 @@ let contactFavorite = () => {
     }else{
         dtc.setChangeFavorite(2);
         dtc.setFavoriteContact(true);
-        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="./img/favorit-icon.png" height="30px" width="30px">Perfil Contato</h2>';
+        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
         
     }
     closeAlert();

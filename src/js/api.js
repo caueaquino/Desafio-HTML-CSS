@@ -19,11 +19,25 @@ export const getContact = async () => {
 
 export let createContact = async () => {
     
+    let cont = ({
+        "firstName": dtc.contato.firstName,
+        "lastName": dtc.contato.lastName,
+        "email": dtc.contato.email,
+        "gender": dtc.contato.gender,
+        "isFavorite": dtc.contato.isFavorite,
+        "company": dtc.contato.info.company,
+        "avatar": dtc.contato.info.avatar,
+        "address": dtc.contato.info.address,
+        "phone": dtc.contato.info.phone,
+        "comments": dtc.contato.info.comments
+      });
+
     try{
         const res =  await fetch('http://contacts-api.azurewebsites.net/api/contacts',
             {
                 method: 'POST',
-                headers: new Headers()
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify(cont)
             }
         );
         if(res.status==200){
@@ -39,11 +53,25 @@ export let createContact = async () => {
 
 export let updateContact = async (id) => {
     
+    let cont = ({
+        "firstName": dtc.contato.firstName,
+        "lastName": dtc.contato.lastName,
+        "email": dtc.contato.email,
+        "gender": dtc.contato.gender,
+        "isFavorite": dtc.contato.isFavorite,
+        "company": dtc.contato.info.company,
+        "avatar": dtc.contato.info.avatar,
+        "address": dtc.contato.info.address,
+        "phone": dtc.contato.info.phone,
+        "comments": dtc.contato.info.comments
+      });
+
     try{
         const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts/'+id,
             {
                 method: 'PUT',
-                headers: new Headers()
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify(cont)
             } 
         );
         if(res.status==200){

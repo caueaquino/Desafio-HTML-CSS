@@ -7,8 +7,8 @@ import * as ith from './js/elementsHTML';
 import * as app from './js/api';
 import * as sm from './js/sideMenu';
 import * as vc from './js/viewContact';
-import { btConfirmarCadastro, btCancelarCadastro } from "./js/createContact";
-import { alertClose, closeAlert, saveChanges, yesCancelEdit, noCancelEdit, contactDelete } from "./js/alertsDiv";
+import { btConfirmarCadastro, btCancelarCadastro, cadastrarContato } from "./js/createContact";
+import { alertClose } from "./js/alertsDiv";
 
 
 app.getContact().then(() => {
@@ -17,9 +17,11 @@ app.getContact().then(() => {
     sm.btContato();
 });
 
-// Funcões Botões
 
-// Botões Menu
+
+    // FUNÇÕES BOTÕES
+
+// Botões Side Menu
 
 ith.btm().onclick = () => {
     sm.btMenu();
@@ -35,50 +37,35 @@ ith.af().onclick = () => {
 
 // Botão visualizar/editar perfil Contato
 
+ith.edc().onclick = () => {
+    vc.editContact();
+}
+
+ith.delc().onclick = () => {
+    vc.deleteContact();
+}
+
+ith.favc().onclick = () => {
+    vc.favoriteContact();
+}
+
 ith.btes().onclick = () => {
     alertClose();
 }
 
 ith.btec().onclick = () => {
-
+    vc.btConfirmarPerfil();
 }
 
 ith.btecanc().onclick = () => {
-
-}
-
-// Botões alerta close perfil
-
-ith.cey().onclick = () => {
-    saveChanges();
-}
-
-ith.cen().onclick = () => {
-    closeAlert();
-    vc.btCloseView();
-}
-
-// Botões cancela e confirma edição contato
-
-ith.yce().onclick = () => {
-    yesCancelEdit();
-}
-
-ith.nce().onclick = () => {
-    noCancelEdit();
-}
-
-// Botões cancela e confirma exclusao contato
-
-ith.yd().onclick = () => {
-    contactDelete();
-}
-
-ith.nd().onclick = () =>{
-    closeAlert();
+    vc.btCancelarPerfil();
 }
 
 // Botões Cadastro Contato
+
+ith.cadc().onclick = () => {
+    cadastrarContato();
+}
 
 ith.confc().onclick = () => {
     btConfirmarCadastro();
