@@ -74,7 +74,6 @@ export let renderContacts = (opt) => {
 
         ith.pg().innerHTML='';
         
-
         let auxpg;
 
         if(dtc.pag<3){

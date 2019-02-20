@@ -160,7 +160,7 @@ export let contactDelete = () => {
 
 export let alertFavorite = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
-                            '<h1>Deseja realmente favoritar esta Contato?</h1>'+
+                            '<h1>Deseja realmente realizar esta alteração?</h1>'+
                             '<button id="btfs">Sim</button>'+
                             '<button id="btfn">Não</button>'+
                         '</div>';

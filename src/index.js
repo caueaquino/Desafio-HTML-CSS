@@ -9,6 +9,7 @@ import * as sm from './js/sideMenu';
 import * as vc from './js/viewContact';
 import { btConfirmarCadastro, btCancelarCadastro, cadastrarContato } from "./js/createContact";
 import { alertClose } from "./js/alertsDiv";
+import { searchKey, searchOut } from "./js/search";
 
 
 app.getContact().then(() => {
@@ -20,6 +21,20 @@ app.getContact().then(() => {
 
 
     // FUNÇÕES BOTÕES
+
+// Barra Pesquisa
+
+
+
+ith.bp().onfocus = () => {
+    ith.bp().onkeyup = () => {
+        searchKey();
+    }
+}
+
+ith.bp().onblur = () => {
+    searchOut();
+}
 
 // Botões Side Menu
 

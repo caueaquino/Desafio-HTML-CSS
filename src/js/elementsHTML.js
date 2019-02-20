@@ -83,6 +83,15 @@ export const lif = () => {
     return document.getElementById('lifavoritos');
 }
 
+// Pesquisa contatos
+
+export const bp = () => {
+    return document.getElementById('barraPesquisa');
+}
+
+export const dtl = () => {
+    return document.getElementById("listContact");
+}
 
 // Contact Area
 

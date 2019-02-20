@@ -204,7 +204,7 @@ body {
 
 .topop {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 90%;
@@ -219,41 +219,50 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0x 5px rgba(0, 0, 0, 0.705);
     padding: 7px 4px 6px 4px;
-    margin-bottom: 40px;
     color: rgb(58, 58, 58);
+    margin-bottom: 40px;
 }
 
-/* #listContact {
-    width: 90%;
+#listContact {
+    display: none;
+    width: 88%;
+    max-height: 350px;
     border-radius: 0px 0px 10px 10px;
-    font-family: "Montserrat",sans-serif;
+    padding-bottom: 10px;
     background-color: rgba(240, 248, 255, 0.562);
-} */
-
-.topop button {
-    padding: 8px;
-    margin-left: -8px;
+    list-style-type: none;
     margin-bottom: 40px;
-    border-radius: 25px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0x 5px rgba(0, 0, 0, 0.705);
-    background-color: rgb(225, 241, 255);
-    transition: all 0.5s;
+    overflow: auto;
+
+}
+
+#listContact button {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: "Montserrat",sans-serif;
+    border: none;
+    background-color: rgba(240, 248, 255, 0);
+    text-align: center;
+    color: rgb(58, 58, 58);
+    font-size: 14pt;
+    margin-bottom: 3px;
+}
+
+#listContact button:hover {
+    background-color: rgba(240, 248, 255, 0.425);
+}
+
+#listContact button:focus {
+    outline-style: none;
 }
 
 #barraPesquisa:hover {
     background-color: rgba(240, 248, 255, 0.85);
 }
 
-.topop button:hover {
-    -webkit-transform: scale(1.1);
-}
-
 #barraPesquisa:focus {
-    outline-style: none;
-}
-
-.topop button:focus {
     outline-style: none;
 }
 
