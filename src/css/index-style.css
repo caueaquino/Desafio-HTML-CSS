@@ -238,16 +238,22 @@ body {
 }
 
 #listContact button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    height: 65px;
     font-family: "Montserrat",sans-serif;
     border: none;
     background-color: rgba(240, 248, 255, 0);
     text-align: center;
     color: rgb(58, 58, 58);
-    font-size: 14pt;
+    font-size: 18pt;
     margin-bottom: 3px;
+}
+
+#listContact button img {
+    margin-right: 10px; 
 }
 
 #listContact button:hover {

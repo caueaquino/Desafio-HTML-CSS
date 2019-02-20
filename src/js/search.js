@@ -19,7 +19,7 @@ export const searchKey = () => {
 
         let bt=document.createElement('button');
 
-        bt.innerText=dtc.contatos[i].firstName+" "+dtc.contatos.lastName;
+        bt.innerHTML="<img src='"+dtc.contatos[i].info.avatar+"' width='60px' height='60px'>"+dtc.contatos[i].firstName+" "+dtc.contatos[i].lastName;
 
         bt.onclick = () => {
             contactView(i);
