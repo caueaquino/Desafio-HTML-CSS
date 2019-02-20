@@ -16,21 +16,25 @@ export let confirmEdit = () => {
 }
 
 export let cancelEdit = () => {
-    ith.ialert().innerHTML='<div id="internal-alert">'+
-                            '<h1>Ao cancelar os dados serão perdidos, deseja prosseguir?</h1>'+
-                            '<button id="yesEdit">Sim</button>'+
-                            '<button id="noEdit">Não</button>'+
-                        '</div>';
-
-    ith.ealerts().style.display="flex";
-    ith.ealerts().style.zIndex="15";
-
-    ith.yce().onclick = () => {
+    if(dtc.contato.firstName.equals(ith.en().value) && dtc.contato.lastName.equals(ith.es().value) && dtc.contato.email.equals(ith.eem().value) && dtc.contato.info.avatar.equals(ith.ea().value) && dtc.contato.info.company.equals(ith.ecomp().value) && dtc.contato.info.address.equals(ith.ee().value) && dtc.contato.info.phone(ith.et().value) && dtc.contato.info.comments.equals(ith.ec())){
         yesCancelEdit();
-    }
-    
-    ith.nce().onclick = () => {
-        noCancelEdit();
+    }else{
+        ith.ialert().innerHTML='<div id="internal-alert">'+
+                                '<h1>Ao cancelar alterações serão perdidas, deseja prosseguir?</h1>'+
+                                '<button id="yesEdit">Sim</button>'+
+                                '<button id="noEdit">Não</button>'+
+                            '</div>';
+
+        ith.ealerts().style.display="flex";
+        ith.ealerts().style.zIndex="15";
+
+        ith.yce().onclick = () => {
+            yesCancelEdit();
+        }
+        
+        ith.nce().onclick = () => {
+            noCancelEdit();
+        }
     }
 }
 
@@ -111,7 +115,6 @@ export let saveChanges = () => {
     
     dtc.setChangeFavorite(0);
     closeAlert();
-    vc.btCloseView();
     ca.renderContacts(dtc.xcf);
 }
 
@@ -189,6 +192,7 @@ export let contactFavorite = () => {
         ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
         
     }
+    saveChanges();
     closeAlert();
 }
 

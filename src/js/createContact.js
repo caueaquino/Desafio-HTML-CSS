@@ -9,9 +9,7 @@ import { createContact } from './api';
 
 export let cadastrarContato = () => {
     ith.cc().style.display="flex";
-    window.location="#";
-    document.documentElement.style.overflow = 'hidden';
-    document.body.scroll = "no";
+    ith.contc().style.display="none";
 }
 
 export let btConfirmarCadastro = () => {
@@ -33,19 +31,15 @@ export let btConfirmarCadastro = () => {
 
         if(dtc.contato.isFavorite==true){
             dtc.pushFavoritos(dtc.contato);
+            limpaTelaCadastro();
         }
     }
     
-    limpaTelaCadastro();
-    document.documentElement.style.overflow = 'auto';
-    document.body.scroll = "yes";
     sm.btContato();
 }
 
  export let btCancelarCadastro = () => {
     limpaTelaCadastro();
-    document.documentElement.style.overflow = 'auto';
-    document.body.scroll = "yes";
 }
 
 let limpaTelaCadastro = () => {
@@ -61,4 +55,5 @@ let limpaTelaCadastro = () => {
     ith.icoment().value="";
     ith.iis().checked=false;
     ith.cc().style.display="none";
+    ith.contc().style.display="flex";
 }

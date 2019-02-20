@@ -7,6 +7,9 @@ import * as dtc from './dataContacts';
 
 var favicon=require('../img/favorit-icon.png');
 
+
+export let auxContato;
+
 export let contactView = (aux) => {
     dtc.setPContact(aux);
 
@@ -29,9 +32,7 @@ export let contactView = (aux) => {
 
     ith.cvc().style.display="flex";
 
-    window.location="#";
-    document.documentElement.style.overflow = 'hidden';
-    document.body.scroll = "no";
+    ith.contc().style.display="none";
 }
 
 export let editContact = () => {
@@ -65,6 +66,8 @@ export let editContact = () => {
     ith.btes().style.display="none";
     ith.btec().style.display="block";
     ith.btecanc().style.display="block";
+
+    auxContato=dtc.contato;
 }
 
 export let deleteContact = () => {
@@ -87,8 +90,7 @@ export let btCancelarPerfil = () => {
 
 export let btCloseView = () => {
     ith.cvc().style.display="none";
-    document.documentElement.style.overflow = 'auto';
-    document.body.scroll = "yes";
+    ith.contc().style.display="flex";
 }
 
 export let disableEdit = () => {

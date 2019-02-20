@@ -65,7 +65,7 @@ ith.favc().onclick = () => {
 }
 
 ith.btes().onclick = () => {
-    alertClose();
+    vc.btCloseView();
 }
 
 ith.btec().onclick = () => {

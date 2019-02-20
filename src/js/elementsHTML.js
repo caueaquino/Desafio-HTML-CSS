@@ -95,6 +95,10 @@ export const dtl = () => {
 
 // Contact Area
 
+export const contc = () => {
+    return document.getElementById("container-contatos");
+}
+
 export const h2t = () => {
     return document.getElementById("h2-type");
 }
