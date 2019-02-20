@@ -13,13 +13,27 @@ export const searchKey = () => {
 
     ith.dtl().innerHTML='';
 
-
+    let name=(ith.bp().value).toLowerCase();
     
-    for(let i=0; i<dtc.contatos.length; i++){
+    let searchContacts=[];
 
-        let bt=document.createElement('button');
+    const regex = new RegExp(/^([a-zA-Zà-úÀ-Ú0-9]|'|\s)+$/);
+    
+    if(name=='' || regex.test(name)){
 
-        bt.innerHTML="<img src='"+dtc.contatos[i].info.avatar+"' width='60px' height='60px'>"+dtc.contatos[i].firstName+" "+dtc.contatos[i].lastName;
+        searchContacts=dtc.contatos.filter(c => { const completeName = `${c.firstName} ${c.lastName}`.toLowerCase()
+            if(completeName.includes(name)){
+                return c;
+            }
+        })
+    }
+    
+
+    for(let i=0; i<searchContacts.length; i++){
+
+        var bt=document.createElement('button');
+                
+        bt.innerHTML="<img src='"+searchContacts[i].info.avatar+"' width='60px' height='60px'>"+searchContacts[i].firstName+" "+searchContacts[i].lastName;
 
         bt.onclick = () => {
             contactView(i);
@@ -29,7 +43,15 @@ export const searchKey = () => {
     }
 }
 
+
 export const searchOut = () => {
+    setTimeout(function(){
+        setSearchOut();
+    }, 100);
+}
+
+
+const setSearchOut = () => {
     ith.dtl().style.display='none';
     ith.bp().style.marginBottom='40px';
 
