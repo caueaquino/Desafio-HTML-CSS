@@ -21,7 +21,9 @@ export let renderContacts = (opt) => {
         dtc.setQtdPag(dtc.contatos.length/10);
         
         if(dtc.contatos.length%10!=0){
-            dtc.setQtdPag(dtc.qtdPag+1);
+            let auxqtdpag=dtc.qtdPag+1;
+
+            dtc.setQtdPag(auxqtdpag);
         }
     }else{
         ith.h2t().innerText="Favoritos";
@@ -44,7 +46,7 @@ export let renderContacts = (opt) => {
 
         let auxpag=(dtc.pag*10);
 
-        for(let i=auxpag;i<auxpag+10;i++){
+        for(let i=auxpag;i<auxpag+10 && i<aux.length;i++){
 
             let fav="";
 
@@ -75,7 +77,7 @@ export let renderContacts = (opt) => {
         ith.pg().innerHTML='';
         
         let auxpg;
-
+        
         if(dtc.pag<3){
             auxpg=0;
 
