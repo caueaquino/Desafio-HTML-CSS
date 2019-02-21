@@ -16,18 +16,8 @@ export const searchKey = () => {
     let name=(ith.bp().value).toLowerCase();
     
     let searchContacts=[];
-
-    const regex = new RegExp(/^([a-zA-Zà-úÀ-Ú0-9]|'|\s)+$/);
     
-    if(name=='' || regex.test(name)){
-
-        searchContacts=dtc.contatos.filter(c => { const completeName = `${c.firstName} ${c.lastName}`.toLowerCase()
-            if(completeName.includes(name)){
-                return c;
-            }
-        })
-    }
-    
+    searchContacts=dtc.contatos.filter(c => new RegExp(name, 'ig').test(`${c.firstName} ${c.lastName}`.toLowerCase()));
 
     for(let i=0; i<searchContacts.length; i++){
 
