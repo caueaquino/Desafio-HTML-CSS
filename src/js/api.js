@@ -12,11 +12,12 @@ export const getContact = async () => {
     
     for(let i=0;i<dtc.contatos.length;i++){
         if(dtc.contatos[i].isFavorite==true){
-            dtc.favoritos.push(dtc.contatos[i]);
+            dtc.pushFavoritos(dtc.contatos[i]);
         }
     }
-    await localStorage.clear();
+    localStorage.clear();
     localStorage['favorits']=JSON.stringify(dtc.favoritos);
+
     dtc.setAuxGetAll(true);
 }
 

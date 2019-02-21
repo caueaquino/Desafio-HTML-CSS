@@ -4,7 +4,6 @@
 import * as dtc from './dataContacts';
 import * as ith from './elementsHTML';
 import * as cta from './contactArea';
-import { getContact } from './api';
 
 
 let y=0;
@@ -23,15 +22,8 @@ let y=0;
 
 export let btContato = () => {
     if(!dtc.auxGetAll){
-        ith.contc().style.display="none";
-        ith.cl().style.display="flex";
-        ith.cl().style.zIndex="100";
-        getContact().then(() => {
-            ith.cl().style.display="none";
-            ith.cl().style.zIndex="0";
-            ith.contc().style.display="flex";
-            renderContact();  
-        });
+        localStorage.clear();
+        window.location.reload();
     }
     else{
         renderContact();

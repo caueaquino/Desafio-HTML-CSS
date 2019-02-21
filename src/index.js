@@ -12,18 +12,20 @@ import { searchKey, searchOut } from "./js/search";
 import { setFavoritos, setContatos} from "./js/dataContacts";
 
 
-if(localStorage['favOn']=='false'){
-    app.getContact().then(() => {
-        ith.cl().style.display="none";
-        ith.cl().style.zIndex="0";
-        sm.btContato();
-    });
-}else{
+
+if(localStorage.getItem('favOn')!==null && localStorage.getItem('favorits')!==null && localStorage.getItem('favOn')=='true'){
     setFavoritos(JSON.parse(localStorage['favorits']));
     setContatos(JSON.parse(localStorage['favorits']));
     sm.btFavorito();
     ith.cl().style.display="none";
     ith.cl().style.zIndex="0";
+
+}else{
+    app.getContact().then(() => {
+        ith.cl().style.display="none";
+        ith.cl().style.zIndex="0";
+        sm.btContato();
+    });
 }
 
 
