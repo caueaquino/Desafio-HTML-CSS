@@ -35,9 +35,11 @@ if(localStorage.getItem('favOn')!==null && localStorage.getItem('favorits')!==nu
 
 
 ith.bp().onfocus = () => {
-    ith.bp().onkeyup = () => {
-        searchKey();
-    }
+    searchKey();
+}
+
+ith.bp().onkeyup = () => {
+    searchKey();
 }
 
 ith.bp().onblur = () => {
