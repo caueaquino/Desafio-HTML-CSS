@@ -36,6 +36,14 @@ export let createContact = async () => {
         "comments": dtc.contato.info.comments
       });
 
+    if(cont.phone==''){
+        cont.phone=null;
+    }
+    
+    if(cont.address==''){
+        cont.address=null;
+    }
+
     try{
         const res =  await fetch('http://contacts-api.azurewebsites.net/api/contacts',
             {
