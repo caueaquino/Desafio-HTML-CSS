@@ -36,6 +36,7 @@ export let btConfirmarCadastro = () => {
     }
     
     sm.btContato();
+    window.location.reload();
 }
 
  export let btCancelarCadastro = () => {

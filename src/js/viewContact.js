@@ -5,10 +5,9 @@ import * as ith from './elementsHTML';
 import * as ad from './alertsDiv';
 import * as dtc from './dataContacts';
 
+
 var favicon=require('../img/favorit-icon.png');
 
-
-export let auxContato;
 
 export let contactView = (aux) => {
     dtc.setPContact(aux);
@@ -66,8 +65,6 @@ export let editContact = () => {
     ith.btes().style.display="none";
     ith.btec().style.display="block";
     ith.btecanc().style.display="block";
-
-    auxContato=dtc.contato;
 }
 
 export let deleteContact = () => {
@@ -80,8 +77,6 @@ export let favoriteContact = () => {
 
 export let btConfirmarPerfil = () =>{
     ad.confirmEdit();
-    disableEdit();
-    hideEdit();
 }
 
 export let btCancelarPerfil = () => {

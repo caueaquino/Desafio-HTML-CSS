@@ -4,6 +4,7 @@
 import * as dtc from './dataContacts';
 import * as ith from './elementsHTML';
 import * as cta from './contactArea';
+import { getContact } from './api';
 
 
 let y=0;
@@ -21,6 +22,23 @@ let y=0;
 }
 
 export let btContato = () => {
+    if(!dtc.auxGetAll){
+        ith.contc().style.display="none";
+        ith.cl().style.display="flex";
+        ith.cl().style.zIndex="100";
+        getContact().then(() => {
+            ith.cl().style.display="none";
+            ith.cl().style.zIndex="0";
+            ith.contc().style.display="flex";
+            renderContact();  
+        });
+    }
+    else{
+        renderContact();
+    }
+}
+
+let renderContact = () => {
     resetbts();
     ith.ac().style.backgroundColor="rgb(35, 68, 255)";
     ith.ac().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
@@ -29,6 +47,7 @@ export let btContato = () => {
     dtc.setxcf(0);
 
     cta.renderContacts(dtc.xcf);
+    localStorage['favOn']=false;
 }
 
 export let btFavorito = () => {
@@ -40,6 +59,7 @@ export let btFavorito = () => {
     dtc.setxcf(1);
 
     cta.renderContacts(dtc.xcf);
+    localStorage['favOn']=true;
 }
 
 let resetbts = () => {

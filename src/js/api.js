@@ -8,13 +8,16 @@ export const getContact = async () => {
     const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts');
     const data = await res.json();
 
-    dtc.setContatos(data);
+    await dtc.setContatos(data);
     
     for(let i=0;i<dtc.contatos.length;i++){
         if(dtc.contatos[i].isFavorite==true){
             dtc.favoritos.push(dtc.contatos[i]);
         }
     }
+    await localStorage.clear();
+    localStorage['favorits']=JSON.stringify(dtc.favoritos);
+    dtc.setAuxGetAll(true);
 }
 
 export let createContact = async () => {

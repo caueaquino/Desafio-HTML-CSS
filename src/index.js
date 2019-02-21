@@ -8,22 +8,28 @@ import * as app from './js/api';
 import * as sm from './js/sideMenu';
 import * as vc from './js/viewContact';
 import { btConfirmarCadastro, btCancelarCadastro, cadastrarContato } from "./js/createContact";
-import { alertClose } from "./js/alertsDiv";
 import { searchKey, searchOut } from "./js/search";
+import { setFavoritos, setContatos} from "./js/dataContacts";
 
 
-app.getContact().then(() => {
+if(localStorage['favOn']=='false'){
+    app.getContact().then(() => {
+        ith.cl().style.display="none";
+        ith.cl().style.zIndex="0";
+        sm.btContato();
+    });
+}else{
+    setFavoritos(JSON.parse(localStorage['favorits']));
+    setContatos(JSON.parse(localStorage['favorits']));
+    sm.btFavorito();
     ith.cl().style.display="none";
     ith.cl().style.zIndex="0";
-    sm.btContato();
-});
-
+}
 
 
     // FUNÇÕES BOTÕES
 
 // Barra Pesquisa
-
 
 
 ith.bp().onfocus = () => {

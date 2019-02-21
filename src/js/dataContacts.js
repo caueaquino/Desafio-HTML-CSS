@@ -1,13 +1,20 @@
 // Javascript Document
 
 
+
+export let auxGetAll=false;
+
+export let setAuxGetAll = (vari) => {
+    auxGetAll=vari;
+}
+
+
+
 export let contatos=[];
 
 export let setContatos = (conts) => {
     contatos=conts;
 }
-
-
 
 export let pushContatos = (cont) => {
     contatos.push(cont);
@@ -16,6 +23,10 @@ export let pushContatos = (cont) => {
 
 
 export let favoritos=[];
+
+export let setFavoritos = (fav) => {
+    favoritos=fav;
+}
 
 export let pushFavoritos = (fav) => {
     favoritos.push(fav);

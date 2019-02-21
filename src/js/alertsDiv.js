@@ -10,35 +10,31 @@ import * as ca from './contactArea';
 
 var favicon = require('../img/favorit-icon.png');
 
-
-export let confirmEdit = () => {
+let saveEdit = () => {
     dtc.constContato(ith.en().value, ith.es().value, ith.eem().value, dtc.contato.gender, ith.ea().value, ith.ecomp().value, ith.ee().value, ith.et().value, ith.ec().value, dtc.contato.isFavorite, dtc.contato.id);
 }
 
-export let cancelEdit = () => {
-    if(dtc.contato.firstName.equals(ith.en().value) && dtc.contato.lastName.equals(ith.es().value) && dtc.contato.email.equals(ith.eem().value) && dtc.contato.info.avatar.equals(ith.ea().value) && dtc.contato.info.company.equals(ith.ecomp().value) && dtc.contato.info.address.equals(ith.ee().value) && dtc.contato.info.phone(ith.et().value) && dtc.contato.info.comments.equals(ith.ec())){
-        yesCancelEdit();
-    }else{
-        ith.ialert().innerHTML='<div id="internal-alert">'+
-                                '<h1>Ao cancelar alterações serão perdidas, deseja prosseguir?</h1>'+
-                                '<button id="yesEdit">Sim</button>'+
-                                '<button id="noEdit">Não</button>'+
-                            '</div>';
 
-        ith.ealerts().style.display="flex";
-        ith.ealerts().style.zIndex="15";
+export let confirmEdit = () => {
+    ith.ialert().innerHTML='<div id="internal-alert">'+
+                            '<h1>Confirmar alterações do Contato?</h1>'+
+                            '<button id="yesEdit">Sim</button>'+
+                            '<button id="noEdit">Não</button>'+
+                        '</div>';
 
-        ith.yce().onclick = () => {
-            yesCancelEdit();
-        }
-        
-        ith.nce().onclick = () => {
-            noCancelEdit();
-        }
+    ith.ealerts().style.display="flex";
+    ith.ealerts().style.zIndex="15";
+
+    ith.yce().onclick = () => {
+        saveChanges();
+    }
+    
+    ith.nce().onclick = () =>{
+        closeAlert();
     }
 }
 
-export let yesCancelEdit = () => {
+export let cancelEdit = () => {
     ith.ea().value=dtc.contato.avatar;
     ith.en().value=dtc.contato.firstName;
     ith.es().value=dtc.contato.lastName;
@@ -51,10 +47,6 @@ export let yesCancelEdit = () => {
     closeAlert();
     vc.disableEdit();
     vc.hideEdit();
-}
-
-export let noCancelEdit = () => {
-    closeAlert();
 }
 
 export let alertClose = () => {
@@ -79,7 +71,7 @@ export let alertClose = () => {
 
 export let saveChanges = () => {
     
-    confirmEdit();
+    saveEdit();
 
     if(app.updateContact(dtc.contato.id)){
 
@@ -112,8 +104,11 @@ export let saveChanges = () => {
             }    
         }
     }
-    
+    localStorage.clear();
+    localStorage['favorits']=JSON.stringify(dtc.favoritos);
     dtc.setChangeFavorite(0);
+    vc.disableEdit();
+    vc.hideEdit();
     closeAlert();
     ca.renderContacts(dtc.xcf);
 }
@@ -150,6 +145,8 @@ export let contactDelete = () => {
                 if(dtc.contato.id==dtc.favoritos[i].id){
                     
                     dtc.removeFavorite(i);
+                    localStorage.clear();
+                    localStorage['favorits']=JSON.stringify(dtc.favoritos);
                     break;
                 }
             }
