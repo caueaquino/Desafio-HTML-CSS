@@ -47,7 +47,7 @@ export const searchKey = () => {
 export const searchOut = () => {
     setTimeout(function(){
         setSearchOut();
-    }, 100);
+    }, 200);
 }
 
 
