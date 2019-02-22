@@ -67,7 +67,7 @@ export const renderContacts = (opt) => {
 
             ith.cf().appendChild(d);  
             
-            if(aux[i].isFavorite==false){
+            if(opt==0){
                 d.onclick = () => {
                     contactView(i);
                 }

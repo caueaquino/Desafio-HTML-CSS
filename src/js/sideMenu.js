@@ -49,6 +49,7 @@ export const btFavorito = () => {
     ith.lif().style.zIndex="3";
     ith.nf().style.display="none";
     dtc.setxcf(1);
+    dtc.setPag(0);
 
     cta.renderContacts(dtc.xcf);
     localStorage['favOn']=true;
