@@ -241,6 +241,7 @@ export const contactDelete = () => {
 
     closeAlert();
     vc.btCloseView();
+    dtc.setPag(0);
     ca.renderContacts(dtc.xcf);
 }
 
@@ -277,6 +278,7 @@ export const contactFavorite = () => {
     }
     saveChanges();
     closeAlert();
+    dtc.setPag(0);
     ca.renderContacts(dtc.xcf);
 }
 
