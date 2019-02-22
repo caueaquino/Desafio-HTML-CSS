@@ -37,6 +37,7 @@ const renderContact = () => {
     ith.lic().style.zIndex="3";
     ith.nc().style.display="none";
     dtc.setxcf(0);
+    dtc.setPag(0);
 
     cta.renderContacts(dtc.xcf);
     localStorage['favOn']=false;
