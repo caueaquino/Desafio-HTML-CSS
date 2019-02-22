@@ -34,6 +34,30 @@ export let contactView = (aux) => {
     ith.contc().style.display="none";
 }
 
+export let favoriteView = (aux) => {
+    dtc.setPContact(aux);
+
+    dtc.setContato(dtc.favoritos[aux]);
+
+    ith.ea().value=dtc.favoritos[aux].info.avatar;
+    ith.en().value=dtc.favoritos[aux].firstName;
+    ith.es().value=dtc.favoritos[aux].lastName;
+    ith.eem().value=dtc.favoritos[aux].email;
+    ith.ecomp().value=dtc.favoritos[aux].info.company;
+    ith.ee().value=dtc.favoritos[aux].info.address;
+    ith.et().value=dtc.favoritos[aux].info.phone;
+    ith.ec().value=dtc.favoritos[aux].info.comments;
+
+    ith.ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+
+
+    ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
+
+    ith.cvc().style.display="flex";
+
+    ith.contc().style.display="none";
+}
+
 export let editContact = () => {
     ith.ea().disabled=false;
     ith.en().disabled=false;

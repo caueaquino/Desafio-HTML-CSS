@@ -3,7 +3,7 @@
 
 import * as ith from './elementsHTML';
 import * as dtc from './dataContacts';
-import { contactView } from './viewContact';
+import { contactView, favoriteView } from './viewContact';
 
 
 var favicon = require('../img/favorit-icon.png');
@@ -39,10 +39,8 @@ export let renderContacts = (opt) => {
 
     if(aux.length>0){
 
-        ith.cf().innerHTML='<div id="contacts-field">'+
-                        '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
-                        '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
-                    '</div>';
+        ith.cf().innerHTML='<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
+                        '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>';
 
         let auxpag=(dtc.pag*10);
 
@@ -56,21 +54,27 @@ export let renderContacts = (opt) => {
 
             let d=document.createElement("div");
 
-            d.innerHTML='<div class="contact-data">'+
-                            '<img src="'+aux[i].info.avatar+'" height="230px" width="230px">'+
+            d.className="contact-data";
+
+            d.innerHTML='<img src="'+aux[i].info.avatar+'" height="230px" width="230px">'+
                             '<label class="lcontact">Contato:</label>'+fav+'<label>'+aux[i].firstName+'&nbsp'+aux[i].lastName+'</label>'+
                                 
                             '<div class="internal-view">'+
                                 '<button id="bt'+i+'" class="btperfil">Visualizar'+
                                     '<img src="'+viewicon+'" alt="Icone-Visualizar" height="30px" width="30px">'+
                                 '</button>'+
-                            '</div>'+
-                        '</div>';
+                            '</div>';
 
             ith.cf().appendChild(d);  
-                        
-            d.onclick = () => {
-                contactView(i);
+            
+            if(aux[i].isFavorite==false){
+                d.onclick = () => {
+                    contactView(i);
+                }
+            }else{
+                d.onclick = () => {
+                    favoriteView(i);
+                }
             }
         }
 
@@ -102,15 +106,13 @@ export let renderContacts = (opt) => {
 
             ith.pg().appendChild(b);
         }
-        
+    
     }else{
 
-        ith.pg().innerHTML='<div id="pags"></div>';
+        ith.pg().innerHTML='';
 
-        ith.cf().innerHTML='<div id="contacts-field">'+
-                            '<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
-                            '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>'+
-                        '</div>';
+        ith.cf().innerHTML='<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
+                            '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>';
 
         if(opt==0){
             ith.nc().style.display="block";

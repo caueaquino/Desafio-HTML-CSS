@@ -53,6 +53,8 @@ let alertUpdateContactSucess = () => {
 
     document.getElementById('okUpSucess').onclick = () => {
         closeAlert();
+        btContato();
+        window.location.reload();
     }
 }
 
@@ -185,7 +187,6 @@ export let saveChanges = () => {
     }
 
     localStorage.clear();
-    localStorage['favorits']=JSON.stringify(dtc.favoritos);
 
     dtc.setChangeFavorite(0);
 
@@ -194,7 +195,7 @@ export let saveChanges = () => {
 
     alertUpdateContactSucess();
 
-    ca.renderContacts(dtc.xcf);
+    // ca.renderContacts(dtc.xcf);
 }
 
 export let alertDelete = () => {
