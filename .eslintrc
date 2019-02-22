@@ -16,3 +16,4 @@
     "func-style":"error",
     "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }]
   }
+}
