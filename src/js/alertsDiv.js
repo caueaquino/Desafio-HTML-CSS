@@ -6,6 +6,7 @@ import * as dtc from './dataContacts';
 import * as app from './api';
 import * as vc from './viewContact';
 import * as ca from './contactArea';
+import { btContato } from './sideMenu';
 
 
 var favicon = require('../img/favorit-icon.png');
@@ -22,6 +23,8 @@ export let alertCreateContactSucess = () => {
 
     document.getElementById('okCadSucess').onclick = () => {
         closeAlert();
+        btContato();
+        window.location.reload();
     }
 }
 

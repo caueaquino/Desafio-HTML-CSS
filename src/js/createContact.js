@@ -53,8 +53,6 @@ export let btConfirmarCadastro = () => {
         }
         
         alertCreateContactSucess();
-        sm.btContato();
-        window.location.reload();
     
     }else{
         alertCreateContact();
