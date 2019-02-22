@@ -3,8 +3,10 @@
 
 import * as ith from './elementsHTML';
 import * as dtc from './dataContacts';
-import { contactView } from './viewContact';
+import { searchView } from './viewContact';
 
+
+export let searchContacts=[];
 
 export const searchKey = () => {
     
@@ -15,8 +17,6 @@ export const searchKey = () => {
 
     const name=(ith.bp().value).toLowerCase();
     
-    let searchContacts=[];
-    
     searchContacts=dtc.contatos.filter(c => new RegExp(name, 'ig').test(`${c.firstName} ${c.lastName}`.toLowerCase()));
 
     for(let i=0; i<searchContacts.length; i++){
@@ -26,7 +26,7 @@ export const searchKey = () => {
         bt.innerHTML="<img src='"+searchContacts[i].info.avatar+"' width='60px' height='60px'>"+searchContacts[i].firstName+" "+searchContacts[i].lastName;
 
         bt.onclick = () => {
-            contactView(i);
+            searchView(i);
         }
 
         ith.dtl().appendChild(bt);

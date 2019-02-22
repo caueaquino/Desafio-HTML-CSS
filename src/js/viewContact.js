@@ -4,6 +4,7 @@
 import * as ith from './elementsHTML';
 import * as ad from './alertsDiv';
 import * as dtc from './dataContacts';
+import { searchContacts } from './search';
 
 
 const favicon=require('../img/favorit-icon.png');
@@ -52,6 +53,32 @@ export const favoriteView = (aux) => {
 
 
     ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
+
+    ith.cvc().style.display="flex";
+
+    ith.contc().style.display="none";
+}
+
+
+export const searchView = (aux) => {
+    dtc.setPContact(aux);
+
+    dtc.setContato(searchContacts[aux]);
+
+    ith.ea().value=searchContacts[aux].info.avatar;
+    ith.en().value=searchContacts[aux].firstName;
+    ith.es().value=searchContacts[aux].lastName;
+    ith.eem().value=searchContacts[aux].email;
+    ith.ecomp().value=searchContacts[aux].info.company;
+    ith.ee().value=searchContacts[aux].info.address;
+    ith.et().value=searchContacts[aux].info.phone;
+    ith.ec().value=searchContacts[aux].info.comments;
+
+    ith.ipf().innerHTML="<h2 id='ipf'>Perfil Contato</h2>";
+
+    if(searchContacts[aux].isFavorite==true){
+        ith.ipf().innerHTML='<h2 id="ipf"><img alt="favorito" src="'+favicon+'" height="30px" width="30px">Perfil Contato</h2>';
+    }
 
     ith.cvc().style.display="flex";
 

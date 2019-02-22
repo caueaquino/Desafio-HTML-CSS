@@ -277,6 +277,7 @@ export const contactFavorite = () => {
     }
     saveChanges();
     closeAlert();
+    ca.renderContacts(dtc.xcf);
 }
 
 
