@@ -21,9 +21,9 @@ export const getContact = async () => {
     dtc.setAuxGetAll(true);
 }
 
-export let createContact = async () => {
+export const createContact = async () => {
     
-    let cont = ({
+    const cont = ({
         "firstName": dtc.contato.firstName,
         "lastName": dtc.contato.lastName,
         "email": dtc.contato.email,
@@ -63,9 +63,9 @@ export let createContact = async () => {
     }
 }
 
-export let updateContact = async (id) => {
+export const updateContact = async (id) => {
     
-    let cont = ({
+    const cont = ({
         "firstName": dtc.contato.firstName,
         "lastName": dtc.contato.lastName,
         "email": dtc.contato.email,
@@ -97,7 +97,7 @@ export let updateContact = async (id) => {
     }
 }
 
-export let removeContact = async (id) => {
+export const removeContact = async (id) => {
 
     try{
         const res = await fetch('http://contacts-api.azurewebsites.net/api/contacts/'+id,

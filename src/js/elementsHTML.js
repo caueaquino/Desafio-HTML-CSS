@@ -3,248 +3,136 @@
 
 // Div Area Carregamento
 
-export const cl = () => {
-    return document.getElementById("container-loading");
-}
+export const cl = () => document.getElementById("container-loading")
 
 // Div Alertas
 
-export const ealerts = () => {
-    return document.getElementById("alerts");
-}
+export const ealerts = () => document.getElementById("alerts")
 
-export const ialert = () => {
-    return document.getElementById("internal-alert");
-}
+export const ialert = () => document.getElementById("internal-alert")
 
 // Botoes Div Alert close perfil
 
-export const cey = () => {
-    return document.getElementById("closeEditYes");
-}
+export const cey = () => document.getElementById("closeEditYes")
 
-export const cen = () => {
-    return document.getElementById("closeEditNo");
-}
+export const cen = () => document.getElementById("closeEditNo")
 
 // Botoes cancela e confirma ediçao
 
-export const yce = () => {
-    return document.getElementById("yesEdit");
-}
+export const yce = () => document.getElementById("yesEdit")
 
-export const nce = () => {
-    return document.getElementById("noEdit");
-}
+export const nce = () => document.getElementById("noEdit")
 
 // Botões confima e cancela exclusao
 
-export const yd = () => {
-    return document.getElementById("yesDel");
-}
+export const yd = () => document.getElementById("yesDel")
 
-export const nd = () => {
-    return document.getElementById("noDel");
-}
+export const nd = () => document.getElementById("noDel")
 
 // Botões confirmar e cancelar favoritar contato
 
-export const bfs = () => {
-    return document.getElementById("btfs");
-}
+export const bfs = () => document.getElementById("btfs")
 
-export const bfn = () => {
-    return document.getElementById("btfn");
-}
+export const bfn = () => document.getElementById("btfn")
 
 // Side Menu Area
 
-export const cSide = () => {
-    return document.getElementById("container-side");
-}
+export const cSide = () => document.getElementById("container-side")
 
-export const btm = () => {
-    return document.getElementById("btmenu");
-}
+export const btm = () => document.getElementById("btmenu")
 
-export const ac = () => {
-    return document.getElementById("acontatos");
-}
+export const ac = () => document.getElementById("acontatos")
 
-export const af = () => {
-    return document.getElementById('afavoritos');
-}
+export const af = () => document.getElementById('afavoritos')
 
-export const lic = () => {
-    return document.getElementById("licontatos");
-}
+export const lic = () => document.getElementById("licontatos")
 
-export const lif = () => {
-    return document.getElementById('lifavoritos');
-}
+export const lif = () => document.getElementById('lifavoritos')
 
 // Pesquisa contatos
 
-export const bp = () => {
-    return document.getElementById('barraPesquisa');
-}
+export const bp = () => document.getElementById('barraPesquisa')
 
-export const dtl = () => {
-    return document.getElementById("listContact");
-}
+export const dtl = () => document.getElementById("listContact")
 
 // Contact Area
 
-export const contc = () => {
-    return document.getElementById("container-contatos");
-}
+export const contc = () => document.getElementById("container-contatos")
 
-export const h2t = () => {
-    return document.getElementById("h2-type");
-}
+export const h2t = () => document.getElementById("h2-type")
 
-export const cf = () => {
-    return document.getElementById("contacts-field");
-}
+export const cf = () => document.getElementById("contacts-field")
 
-export const nc = () => {
-    return document.getElementById("not-contacts");
-}
+export const nc = () => document.getElementById("not-contacts")
 
-export const nf = () => {
-    return document.getElementById("not-favorits");
-}
+export const nf = () => document.getElementById("not-favorits")
 
 // Create Contact Area
 
-export const cadc = () => {
-    return document.getElementById("cadcontatos");
-}
+export const cadc = () => document.getElementById("cadcontatos")
 
-export const cc = () => {
-    return document.getElementById("container-cadastrar");
-}
+export const cc = () => document.getElementById("container-cadastrar")
 
-export const ino = () => {
-    return document.getElementById("inome");
-}
+export const ino = () => document.getElementById("inome")
 
-export const is = () => {
-    return document.getElementById("isobrenome");
-}
+export const is = () => document.getElementById("isobrenome")
 
-export const ie = () => {
-    return document.getElementById('iemail');
-}
+export const ie = () => document.getElementById('iemail')
 
-export const im = () => {
-    return document.getElementById("imasculino");
-}
+export const im = () => document.getElementById("imasculino")
 
-export const ife = ( ) => {
-    return document.getElementById("ifeminino");
-}
+export const ife = ( ) => document.getElementById("ifeminino")
 
-export const ia = () => {
-    return document.getElementById("iavatar");
-}
+export const ia = () => document.getElementById("iavatar")
 
-export const ic = () => {
-    return document.getElementById("icompanhia");
-}
+export const ic = () => document.getElementById("icompanhia")
 
-export const iend = () => {
-    return document.getElementById("iendereco");
-}
+export const iend = () => document.getElementById("iendereco")
 
-export const it = () => {
-    return document.getElementById("itelefone");
-}
+export const it = () => document.getElementById("itelefone")
 
-export const icoment = () => {
-    return document.getElementById('icomentario');
-}
+export const icoment = () => document.getElementById('icomentario')
 
-export const iis = () => {
-    return document.getElementById("iisfavorite");
-}
+export const iis = () => document.getElementById("iisfavorite")
 
-export const confc = () => {
-    return document.getElementById("confirmCad");
-}
+export const confc = () => document.getElementById("confirmCad")
 
-export const cancc = () => {
-    return document.getElementById("cancelCad");
-}
+export const cancc = () => document.getElementById("cancelCad")
 
 // Area Paginação
 
-export const pg = () => {
-    return document.getElementById("pags");
-}
+export const pg = () => document.getElementById("pags")
 
 // View and Edit Contact Area
 
-export const edc = () => {
-    return document.getElementById("edit-contact");
-}
+export const edc = () => document.getElementById("edit-contact")
 
-export const delc = () => {
-    return document.getElementById("delete-contact");
-}
+export const delc = () => document.getElementById("delete-contact")
 
-export const favc = () => {
-    return document.getElementById("favorite-contact");
-}
+export const favc = () => document.getElementById("favorite-contact")
 
-export const ipf = () => {
-    return document.getElementById("ipf");
-}
+export const ipf = () => document.getElementById("ipf")
 
-export const ea = () => {
-    return document.getElementById("eavatar");
-}
+export const ea = () => document.getElementById("eavatar")
 
-export const en = () => {
-    return document.getElementById("enome");
-}
+export const en = () => document.getElementById("enome")
 
-export const es = () => {
-    return document.getElementById("esobrenome");
-}
+export const es = () => document.getElementById("esobrenome")
 
-export const eem = () => {
-    return document.getElementById("eemail");
-}
+export const eem = () => document.getElementById("eemail")
 
-export const ecomp = () => {
-    return document.getElementById("ecompanhia");
-}
+export const ecomp = () => document.getElementById("ecompanhia")
 
-export const ee = () => {
-    return document.getElementById("eendereco");
-}
+export const ee = () => document.getElementById("eendereco")
 
-export const et = () => {
-    return document.getElementById("etelefone");
-}
+export const et = () => document.getElementById("etelefone")
 
-export const ec = () => {
-    return document.getElementById("ecomentario");
-}
+export const ec = () => document.getElementById("ecomentario")
 
-export const cvc = () => {
-    return document.getElementById("container-vcont");
-}
+export const cvc = () => document.getElementById("container-vcont")
 
-export const btes = () => {
-    return document.getElementById("btEditSair");
-}
+export const btes = () => document.getElementById("btEditSair")
 
-export const btec = () => {
-    return document.getElementById("btEditConf");
-}
+export const btec = () => document.getElementById("btEditConf")
 
-export const btecanc = () => {
-    return document.getElementById("btEditCanc");
-}
+export const btecanc = () => document.getElementById("btEditCanc")

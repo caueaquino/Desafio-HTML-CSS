@@ -8,7 +8,7 @@ import * as cta from './contactArea';
 
 let y=0;
 
- export let btMenu = () => {
+ export const btMenu = () => {
     if(y==0){
         ith.cSide().style.display="flex";
         ith.btm().style.left="270px";
@@ -20,7 +20,7 @@ let y=0;
     }
 }
 
-export let btContato = () => {
+export const btContato = () => {
     if(!dtc.auxGetAll){
         localStorage.clear();
         window.location.reload();
@@ -30,7 +30,7 @@ export let btContato = () => {
     }
 }
 
-let renderContact = () => {
+const renderContact = () => {
     resetbts();
     ith.ac().style.backgroundColor="rgb(35, 68, 255)";
     ith.ac().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
@@ -42,7 +42,7 @@ let renderContact = () => {
     localStorage['favOn']=false;
 }
 
-export let btFavorito = () => {
+export const btFavorito = () => {
     resetbts();
     ith.af().style.backgroundColor="rgb(35, 68, 255)";
     ith.af().style.boxShadow="2px 0px 10px rgb(10, 10, 10)";
@@ -54,7 +54,7 @@ export let btFavorito = () => {
     localStorage['favOn']=true;
 }
 
-let resetbts = () => {
+const resetbts = () => {
     ith.ac().style.backgroundColor="rgba(10, 10, 10, 0)";
     ith.ac().style.boxShadow="-2px 0px 10px rgba(10, 10, 10, 0)";
     ith.lic().style.zIndex="2";

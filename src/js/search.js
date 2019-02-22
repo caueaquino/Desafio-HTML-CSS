@@ -13,7 +13,7 @@ export const searchKey = () => {
 
     ith.dtl().innerHTML='';
 
-    let name=(ith.bp().value).toLowerCase();
+    const name=(ith.bp().value).toLowerCase();
     
     let searchContacts=[];
     
@@ -21,7 +21,7 @@ export const searchKey = () => {
 
     for(let i=0; i<searchContacts.length; i++){
 
-        var bt=document.createElement('button');
+        const bt=document.createElement('button');
                 
         bt.innerHTML="<img src='"+searchContacts[i].info.avatar+"' width='60px' height='60px'>"+searchContacts[i].firstName+" "+searchContacts[i].lastName;
 

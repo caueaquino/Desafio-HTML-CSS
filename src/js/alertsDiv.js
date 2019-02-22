@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 // Javascript Document
 
 
@@ -9,10 +10,10 @@ import * as ca from './contactArea';
 import { btContato } from './sideMenu';
 
 
-var favicon = require('../img/favorit-icon.png');
+const favicon = require('../img/favorit-icon.png');
 
 
-export let alertCreateContactSucess = () => {
+export const alertCreateContactSucess = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Contato cadastrado com sucesso!</h1>'+
                             '<button id="okCadSucess">OK</button>'+
@@ -28,7 +29,7 @@ export let alertCreateContactSucess = () => {
     }
 }
 
-export let alertCreateContact = () => {
+export const alertCreateContact = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Preencha todos os campos marcados com * do cadastro com dados válidos!</h1>'+
                             '<button id="okCad">OK</button>'+
@@ -42,7 +43,7 @@ export let alertCreateContact = () => {
     }
 }
 
-let alertUpdateContactSucess = () => {
+const alertUpdateContactSucess = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Contato atualizado com sucesso!</h1>'+
                             '<button id="okUpSucess">OK</button>'+
@@ -58,7 +59,7 @@ let alertUpdateContactSucess = () => {
     }
 }
 
-let alertUpdateContact = () => {
+const alertUpdateContact = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Preencha todos os campos marcados com * do contato com dados válidos!</h1>'+
                             '<button id="okUp">OK</button>'+
@@ -72,12 +73,12 @@ let alertUpdateContact = () => {
     }
 }
 
-let saveEdit = () => {
+const saveEdit = () => {
     dtc.constContato(ith.en().value, ith.es().value, ith.eem().value, dtc.contato.gender, ith.ea().value, ith.ecomp().value, ith.ee().value, ith.et().value, ith.ec().value, dtc.contato.isFavorite, dtc.contato.id);
 }
 
 
-export let confirmEdit = () => {
+export const confirmEdit = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Confirmar alterações do Contato?</h1>'+
                             '<button id="yesEdit">Sim</button>'+
@@ -101,21 +102,21 @@ export let confirmEdit = () => {
 }
 
 
-let verifFieldsUp = () => {
+const verifFieldsUp = () => {
     if(ith.en().value.length>=3 && ith.es().value.length>=3 && verifEmailUp(ith.eem().value) && ith.ecomp().value.length>=3){
         return true;
     }
     return false;
 }
 
-let verifEmailUp = (email) =>{
+const verifEmailUp = (email) =>{
 
-        let te = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const te = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         
         return te.test(email);
 }
 
-export let cancelEdit = () => {
+export const cancelEdit = () => {
     ith.ea().value=dtc.contato.avatar;
     ith.en().value=dtc.contato.firstName;
     ith.es().value=dtc.contato.lastName;
@@ -130,7 +131,7 @@ export let cancelEdit = () => {
     vc.hideEdit();
 }
 
-export let alertClose = () => {
+export const alertClose = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja salvar as mudanças?</h1>'+
                             '<button id="closeEditYes">Sim</button>'+
@@ -150,7 +151,7 @@ export let alertClose = () => {
     }
 }
 
-export let saveChanges = () => {
+export const saveChanges = () => {
     
     saveEdit();
 
@@ -198,7 +199,7 @@ export let saveChanges = () => {
     // ca.renderContacts(dtc.xcf);
 }
 
-export let alertDelete = () => {
+export const alertDelete = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja realmente deletar esta Contato?</h1>'+
                             '<button id="yesDel">Sim</button>'+
@@ -217,7 +218,7 @@ export let alertDelete = () => {
     }
 }
 
-export let contactDelete = () => {
+export const contactDelete = () => {
     
     if(app.removeContact(dtc.contato.id)){
 
@@ -243,7 +244,7 @@ export let contactDelete = () => {
     ca.renderContacts(dtc.xcf);
 }
 
-export let alertFavorite = () => {
+export const alertFavorite = () => {
     ith.ialert().innerHTML='<div id="internal-alert">'+
                             '<h1>Deseja realmente realizar esta alteração?</h1>'+
                             '<button id="btfs">Sim</button>'+
@@ -262,7 +263,7 @@ export let alertFavorite = () => {
     }
 }
 
-export let contactFavorite = () => {
+export const contactFavorite = () => {
     if(dtc.contato.isFavorite==true){
         dtc.setChangeFavorite(1);
         dtc.setFavoriteContact(false);
@@ -279,7 +280,7 @@ export let contactFavorite = () => {
 }
 
 
-export let closeAlert = () => {
+export const closeAlert = () => {
     ith.ealerts().style.display="none";
     ith.ealerts().style.zIndex="0";
 }

@@ -6,11 +6,11 @@ import * as dtc from './dataContacts';
 import { contactView, favoriteView } from './viewContact';
 
 
-var favicon = require('../img/favorit-icon.png');
-var viewicon = require('../img/icon-view.png');
+const favicon = require('../img/favorit-icon.png');
+const viewicon = require('../img/icon-view.png');
 
 
-export let renderContacts = (opt) => {
+export const renderContacts = (opt) => {
 
     let aux;
 
@@ -21,7 +21,7 @@ export let renderContacts = (opt) => {
         dtc.setQtdPag(dtc.contatos.length/10);
         
         if(dtc.contatos.length%10!=0){
-            let auxqtdpag=dtc.qtdPag+1;
+            const auxqtdpag=dtc.qtdPag+1;
 
             dtc.setQtdPag(auxqtdpag);
         }
@@ -42,7 +42,7 @@ export let renderContacts = (opt) => {
         ith.cf().innerHTML='<h2 id="not-contacts">Não Há Contatos Cadastrados !</h2>'+
                         '<h2 id="not-favorits">Não Há Contatos Favoritos !</h2>';
 
-        let auxpag=(dtc.pag*10);
+        const auxpag=(dtc.pag*10);
 
         for(let i=auxpag;i<auxpag+10 && i<aux.length;i++){
 
@@ -52,7 +52,7 @@ export let renderContacts = (opt) => {
                 fav="<img class='fimg' src='"+favicon+"' alt='Favorito' height='30px' width='30px'>";
             }
 
-            let d=document.createElement("div");
+            const d=document.createElement("div");
 
             d.className="contact-data";
 
@@ -91,7 +91,7 @@ export let renderContacts = (opt) => {
 
         for(let i=auxpg; i<auxpg+5 && i<dtc.qtdPag-1; i++){
 
-            let b=document.createElement("button");
+            const b=document.createElement("button");
             
             if(i==dtc.pag){
                 b.style.backgroundColor="rgb(150, 150, 150)";

@@ -4,7 +4,7 @@
 
 export let auxGetAll=false;
 
-export let setAuxGetAll = (vari) => {
+export const setAuxGetAll = (vari) => {
     auxGetAll=vari;
 }
 
@@ -12,11 +12,11 @@ export let setAuxGetAll = (vari) => {
 
 export let contatos=[];
 
-export let setContatos = (conts) => {
+export const setContatos = (conts) => {
     contatos=conts;
 }
 
-export let pushContatos = (cont) => {
+export const pushContatos = (cont) => {
     contatos.push(cont);
 }
 
@@ -24,19 +24,19 @@ export let pushContatos = (cont) => {
 
 export let favoritos=[];
 
-export let setFavoritos = (fav) => {
+export const setFavoritos = (fav) => {
     favoritos=fav;
 }
 
-export let pushFavoritos = (fav) => {
+export const pushFavoritos = (fav) => {
     favoritos.push(fav);
 }
 
-export let changeFavorites = (cont, i) => {
+export const changeFavorites = (cont, i) => {
     favoritos[i]=cont;
 }
 
-export let removeFavorite = (i) => {
+export const removeFavorite = (i) => {
     favoritos.splice(i, 1);
 }
 
@@ -58,23 +58,23 @@ export let contato={
     id: ""
 };
 
-export let setContato = (cont) => {
+export const setContato = (cont) => {
     contato=cont;
 }
 
-export let setFavoriteContact = (op) => {
+export const setFavoriteContact = (op) => {
     contato.isFavorite=op;
 }
 
-export let changeContato = (cont, i) => {
+export const changeContato = (cont, i) => {
     contato[i]=cont;
 }
 
-export let removeContato = (i) => {
+export const removeContato = (i) => {
     contatos.splice(i, 1);
 }
 
-export let constContato = (ft, ln, e, g, iav, ic, iad, ip, ico, ifa, id) => {
+export const constContato = (ft, ln, e, g, iav, ic, iad, ip, ico, ifa, id) => {
     contato.firstName=ft;
     contato.lastName=ln;
     contato.email=e;
@@ -92,7 +92,7 @@ export let constContato = (ft, ln, e, g, iav, ic, iad, ip, ico, ifa, id) => {
 
 export let changeFavorite=0;
 
-export let setChangeFavorite = (cf) => {
+export const setChangeFavorite = (cf) => {
     changeFavorite=cf;
 }
 
@@ -100,7 +100,7 @@ export let setChangeFavorite = (cf) => {
 
 export let pcontact;
 
-export let setPContact = (pc) => {
+export const setPContact = (pc) => {
     pcontact=pc;    
 }
 
@@ -108,7 +108,7 @@ export let setPContact = (pc) => {
 
 export let xcf=0;
 
-export let setxcf = (x) => {
+export const setxcf = (x) => {
     xcf=x;
 }
 
@@ -116,7 +116,7 @@ export let setxcf = (x) => {
 
 export let pag=0;
 
-export let setPag = (pg) => {
+export const setPag = (pg) => {
     pag=pg;
 }
 
@@ -124,6 +124,6 @@ export let setPag = (pg) => {
 
 export let qtdPag=0;
 
-export let setQtdPag = (x) => {
+export const setQtdPag = (x) => {
     qtdPag=x;
 }

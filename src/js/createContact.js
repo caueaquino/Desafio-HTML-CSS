@@ -1,33 +1,33 @@
+/* eslint-disable no-useless-escape */
 // Javascript Document
 
 
 import * as ith from './elementsHTML';
 import * as dtc from './dataContacts';
-import * as sm from './sideMenu';
 import { createContact } from './api';
 import { alertCreateContact, alertCreateContactSucess } from './alertsDiv';
 
 
-export let cadastrarContato = () => {
+export const cadastrarContato = () => {
     ith.cc().style.display="flex";
     ith.contc().style.display="none";
 }
 
-let verifFieldsCad = () => {
+const verifFieldsCad = () => {
     if(ith.ino().value.length>=3 && ith.is().value.length>=3 && verifEmail(ith.ie().value) && (ith.im().checked==true || ith.ife().checked==true) && ith.ic().value.length>=3){
         return true;
     }
     return false;
 }
 
-let verifEmail = (email) =>{
+const verifEmail = (email) =>{
 
-    let te = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const te = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     
     return te.test(email);
 }
 
-export let btConfirmarCadastro = () => {
+export const btConfirmarCadastro = () => {
     let auxg;
 
     if(verifFieldsCad()){
@@ -59,11 +59,11 @@ export let btConfirmarCadastro = () => {
     }
 }
 
- export let btCancelarCadastro = () => {
+ export const btCancelarCadastro = () => {
     limpaTelaCadastro();
 }
 
-let limpaTelaCadastro = () => {
+const limpaTelaCadastro = () => {
     ith.ino().value="";
     ith.is().value="";
     ith.ie().value="";

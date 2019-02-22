@@ -6,10 +6,10 @@ import * as ad from './alertsDiv';
 import * as dtc from './dataContacts';
 
 
-var favicon=require('../img/favorit-icon.png');
+const favicon=require('../img/favorit-icon.png');
 
 
-export let contactView = (aux) => {
+export const contactView = (aux) => {
     dtc.setPContact(aux);
 
     dtc.setContato(dtc.contatos[aux]);
@@ -34,7 +34,7 @@ export let contactView = (aux) => {
     ith.contc().style.display="none";
 }
 
-export let favoriteView = (aux) => {
+export const favoriteView = (aux) => {
     dtc.setPContact(aux);
 
     dtc.setContato(dtc.favoritos[aux]);
@@ -58,7 +58,7 @@ export let favoriteView = (aux) => {
     ith.contc().style.display="none";
 }
 
-export let editContact = () => {
+export const editContact = () => {
     ith.ea().disabled=false;
     ith.en().disabled=false;
     ith.es().disabled=false;
@@ -91,28 +91,28 @@ export let editContact = () => {
     ith.btecanc().style.display="block";
 }
 
-export let deleteContact = () => {
+export const deleteContact = () => {
     ad.alertDelete();
 }
 
-export let favoriteContact = () => {
+export const favoriteContact = () => {
     ad.alertFavorite();
 }
 
-export let btConfirmarPerfil = () =>{
+export const btConfirmarPerfil = () =>{
     ad.confirmEdit();
 }
 
-export let btCancelarPerfil = () => {
+export const btCancelarPerfil = () => {
     ad.cancelEdit();
 }
 
-export let btCloseView = () => {
+export const btCloseView = () => {
     ith.cvc().style.display="none";
     ith.contc().style.display="flex";
 }
 
-export let disableEdit = () => {
+export const disableEdit = () => {
     ith.ea().disabled=true;
     ith.en().disabled=true;
     ith.es().disabled=true;
@@ -123,7 +123,7 @@ export let disableEdit = () => {
     ith.ec().disabled=true;
 }
 
-export let hideEdit = () =>{
+export const hideEdit = () =>{
     ith.btec().style.display="none";
     ith.btecanc().style.display="none";
     ith.btes().style.display="block";
