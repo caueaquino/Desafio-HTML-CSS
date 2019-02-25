@@ -15,8 +15,6 @@ export const getContact = async () => {
             dtc.pushFavoritos(dtc.contatos[i]);
         }
     }
-    localStorage.clear();
-    localStorage['favorits']=JSON.stringify(dtc.favoritos);
 
     dtc.setAuxGetAll(true);
 }

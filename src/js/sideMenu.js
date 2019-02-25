@@ -22,7 +22,6 @@ let y=0;
 
 export const btContato = () => {
     if(!dtc.auxGetAll){
-        localStorage.clear();
         window.location.reload();
     }
     else{

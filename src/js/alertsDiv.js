@@ -7,7 +7,7 @@ import * as dtc from './dataContacts';
 import * as app from './api';
 import * as vc from './viewContact';
 import * as ca from './contactArea';
-import { btContato } from './sideMenu';
+import { btContato, btFavorito } from './sideMenu';
 
 
 const favicon = require('../img/favorit-icon.png');
@@ -54,7 +54,13 @@ const alertUpdateContactSucess = () => {
 
     document.getElementById('okUpSucess').onclick = () => {
         closeAlert();
-        btContato();
+        if(localStorage['favOn']=='false'){
+            btContato();
+    
+        }else{
+            btFavorito();
+        }
+        
         window.location.reload();
     }
 }
@@ -187,8 +193,6 @@ export const saveChanges = () => {
         }
     }
 
-    localStorage.clear();
-
     dtc.setChangeFavorite(0);
 
     vc.disableEdit();
@@ -231,8 +235,6 @@ export const contactDelete = () => {
                 if(dtc.contato.id==dtc.favoritos[i].id){
                     
                     dtc.removeFavorite(i);
-                    localStorage.clear();
-                    localStorage['favorits']=JSON.stringify(dtc.favoritos);
                     break;
                 }
             }
