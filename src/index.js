@@ -9,24 +9,20 @@ import * as sm from './js/sideMenu';
 import * as vc from './js/viewContact';
 import { btConfirmarCadastro, btCancelarCadastro, cadastrarContato } from "./js/createContact";
 import { searchKey, searchOut } from "./js/search";
-import { setFavoritos, setContatos} from "./js/dataContacts";
 
 
-
-if(localStorage.getItem('favOn')!==null && localStorage.getItem('favorits')!==null && localStorage.getItem('favOn')=='true'){
-    setFavoritos(JSON.parse(localStorage['favorits']));
-    setContatos(JSON.parse(localStorage['favorits']));
-    sm.btFavorito();
-    ith.cl().style.display="none";
-    ith.cl().style.zIndex="0";
-
-}else{
-    app.getContact().then(() => {
+app.getContact().then(() => {
+    if(localStorage.getItem('favOn')!==null && localStorage.getItem('favOn')=='true'){
+        sm.btFavorito();
         ith.cl().style.display="none";
         ith.cl().style.zIndex="0";
+
+    }else{
         sm.btContato();
-    });
-}
+        ith.cl().style.display="none";
+        ith.cl().style.zIndex="0";
+    }
+});
 
 
     // FUNÇÕES BOTÕES
